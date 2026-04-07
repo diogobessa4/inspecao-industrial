@@ -1145,14 +1145,7 @@ function gerarLaudo(id) {
     '<td style="width:25%"><div class="sig-line">Data / Date<br>' + dataExib + '</div></td>' +
     '</tr>' +
     '</table>' +
-    '
-<div id="loading-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;align-items:center;justify-content:center">
-  <div style="background:#fff;border-radius:14px;padding:28px 40px;text-align:center;font-family:'DM Sans',sans-serif;box-shadow:0 8px 32px rgba(0,0,0,.2)">
-    <div style="width:40px;height:40px;border:3px solid #e0e0d8;border-top-color:#3d8c40;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px"></div>
-    <div style="font-size:14px;color:#555550;font-weight:500">Carregando...</div>
-  </div>
-</div>
-</body></html>';
+    '</body></html>';
 
   document.getElementById('laudo-conteudo').innerHTML = html;
   document.getElementById('laudo-overlay').style.display = 'block';
@@ -1268,5 +1261,11 @@ function limparForm() {
 }
 (async () => { await initData(); updateDash(); adicionarLinha(); })();
 </script>
+<div id="loading-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:14px;padding:28px 40px;text-align:center;font-family:'DM Sans',sans-serif;box-shadow:0 8px 32px rgba(0,0,0,.2)">
+    <div style="width:40px;height:40px;border:3px solid #e0e0d8;border-top-color:#3d8c40;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px"></div>
+    <div style="font-size:14px;color:#555550;font-weight:500">Carregando...</div>
+  </div>
+</div>
 </body>
 </html>
