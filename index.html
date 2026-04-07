@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Defeitos — Sistema de Inspeção Industrial</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --green:#3d8c40;--green-dark:#1a5c1d;--green-light:#e8f5e9;--green-mid:#5aac5e;
+    --teal-1:#0a2424;--teal-2:#0f3030;--teal-3:#1a4040;
+    --brand:#7fd320;
+    --bg:#f5f5f0;--surface:#ffffff;--border:#e0e0d8;
+    --text:#1a1a1a;--text-2:#555550;--text-3:#888880;
+    --red:#c0392b;--amber:#d4811a;--blue:#1a6fa8;
+    --sidebar-w:210px;
+    --font:'DM Sans',sans-serif;
+  }
+  body{font-family:var(--font);background:var(--bg);color:var(--text);display:flex;height:100vh;overflow:hidden;font-size:14px}
+
+  /* SIDEBAR */
+  #sidebar{
+    width:var(--sidebar-w);min-width:var(--sidebar-w);
+    background:linear-gradient(180deg,var(--teal-1) 0%,var(--teal-2) 50%,#061515 100%);
+    border-right:2px solid var(--brand);
+    display:flex;flex-direction:column;height:100vh;overflow-y:auto;overflow-x:hidden;
+  }
+  .sb-brand{padding:20px 16px 16px;border-bottom:1px solid rgba(127,211,32,0.15)}
+  .sb-logo{display:flex;align-items:center;gap:10px}
+  .sb-logo-icon{
+    width:36px;height:36px;background:var(--brand);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .sb-logo-icon svg{width:20px;height:20px;fill:#1a3d3d}
+  .sb-title{color:#fff;font-size:13px;font-weight:600;line-height:1.2}
+  .sb-sub{color:rgba(127,211,32,0.7);font-size:10px;font-weight:400;margin-top:2px}
+  .sb-nav{padding:12px 8px;flex:1}
+  .sb-item{
+    display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;
+    color:rgba(255,255,255,0.7);cursor:pointer;transition:all .15s;margin-bottom:2px;
+    font-size:13px;font-weight:400;border:none;background:none;width:100%;text-align:left;
+    position:relative;
+  }
+  .sb-item:hover{background:rgba(127,211,32,0.1);color:#fff}
+  .sb-item.active{background:var(--green);color:#fff;font-weight:500}
+  .sb-item.active::before{content:'';position:absolute;left:-8px;top:50%;transform:translateY(-50%);width:3px;height:18px;background:var(--brand);border-radius:0 3px 3px 0}
+  .sb-item svg{width:16px;height:16px;flex-shrink:0;opacity:.8}
+  .sb-item.active svg{opacity:1}
+  .sb-footer{padding:12px 8px;border-top:1px solid rgba(127,211,32,0.1)}
+  .sb-ver{color:rgba(255,255,255,0.25);font-size:10px;text-align:center;padding:4px}
+
+  /* MAIN */
+  #main{flex:1;overflow-y:auto;display:flex;flex-direction:column}
+  .page{display:none;padding:32px 36px;flex:1}
+  .page.active{display:block}
+  .page-header{margin-bottom:28px}
+  .page-title{font-size:26px;font-weight:600;color:var(--text);letter-spacing:-.3px}
+  .page-sub{color:var(--text-3);font-size:13px;margin-top:4px}
+
+  /* TOAST */
+  #toast{
+    position:fixed;bottom:24px;right:24px;background:#1a1a1a;color:#fff;
+    padding:12px 18px;border-radius:10px;font-size:13px;font-weight:500;
+    transform:translateY(80px);opacity:0;transition:all .3s;z-index:999;
+    display:flex;align-items:center;gap:8px;
+  }
+  #toast.show{transform:translateY(0);opacity:1}
+  #toast .t-dot{width:8px;height:8px;border-radius:50%;background:var(--brand);flex-shrink:0}
+
+  /* DASHBOARD CARDS */
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px}
+  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden}
+  .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+  .stat-card.crack::before{background:var(--red)}
+  .stat-card.poros::before{background:var(--amber)}
+  .stat-card.ond::before{background:var(--blue)}
+  .stat-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .stat-icon.cr{background:#fdeaea}
+  .stat-icon.po{background:#fef5e4}
+  .stat-icon.on{background:#e8f1fa}
+  .stat-icon svg{width:18px;height:18px}
+  .stat-num{font-size:28px;font-weight:600;color:var(--text);line-height:1}
+  .stat-label{color:var(--text-2);font-size:12px;margin-top:4px}
+  .stat-sub{color:var(--text-3);font-size:11px;margin-top:2px}
+  .section-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+  .section-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
+  .section-title svg{color:var(--green);width:18px;height:18px}
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stats-mini{text-align:center;padding:12px;background:var(--bg);border-radius:8px}
+  .stats-mini-num{font-size:22px;font-weight:600}
+  .stats-mini-num.total{color:var(--text)}
+  .stats-mini-num.cr{color:var(--red)}
+  .stats-mini-num.po{color:var(--amber)}
+  .stats-mini-num.on{color:var(--blue)}
+  .stats-mini-label{font-size:11px;color:var(--text-3);margin-top:2px}
+
+  /* FORM */
+  .form-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px;max-width:960px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .form-row-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
+  .form-group{margin-bottom:16px}
+  .form-label{display:block;font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:6px;letter-spacing:.3px;text-transform:uppercase}
+  .form-input,.form-select,.form-textarea{
+    width:100%;border:1px solid var(--border);border-radius:8px;
+    padding:10px 12px;font-size:13px;font-family:var(--font);background:var(--bg);
+    color:var(--text);transition:border-color .15s;outline:none;
+  }
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--green);background:#fff}
+  .form-textarea{resize:vertical;min-height:90px}
+  .upload-zone{
+    border:2px dashed var(--border);border-radius:10px;padding:32px;text-align:center;
+    background:var(--bg);cursor:pointer;transition:all .15s;
+  }
+  .upload-zone:hover{border-color:var(--green);background:var(--green-light)}
+  .upload-icon{color:var(--text-3);margin-bottom:8px}
+  .upload-icon svg{width:32px;height:32px}
+  .upload-text{color:var(--text-2);font-size:13px}
+  .upload-sub{color:var(--text-3);font-size:11px;margin-top:4px}
+  .preview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px;margin-top:12px}
+  .preview-img{width:80px;height:80px;border-radius:8px;object-fit:cover;border:1px solid var(--border)}
+  .btn{padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .15s;font-family:var(--font)}
+  .btn-primary{background:var(--green);color:#fff}
+  .btn-primary:hover{background:var(--green-dark)}
+  .btn-secondary{background:var(--bg);color:var(--text-2);border:1px solid var(--border)}
+  .btn-secondary:hover{background:var(--border)}
+  .btn-sm{padding:6px 12px;font-size:12px}
+  .btn-danger{background:#fdeaea;color:var(--red);border:1px solid #f5c6c6}
+  .btn-danger:hover{background:#f5c6c6}
+  .form-actions{display:flex;gap:10px;margin-top:8px}
+  .form-section-title{font-size:11px;font-weight:700;color:var(--green-dark);text-transform:uppercase;letter-spacing:.6px;margin:20px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--green-light)}
+  .sub-row{display:flex;gap:8px}
+  .sub-row .form-input{flex:1}
+  .results-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+  .results-table th{background:var(--bg);font-weight:600;color:var(--text-2);padding:8px 10px;border:1px solid var(--border);text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+  .results-table td{padding:5px 7px;border:1px solid var(--border);vertical-align:middle}
+  .results-table td input,.results-table td select{border:none;background:transparent;font-size:12px;font-family:var(--font);width:100%;outline:none;color:var(--text)}
+  .results-table .btn-del{background:none;border:none;cursor:pointer;color:var(--red);font-size:14px;padding:0 4px}
+
+  /* LIST */
+  .list-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+  .sort-select{border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:12px;background:var(--surface);color:var(--text-2);font-family:var(--font);outline:none;cursor:pointer}
+  .empty-state{text-align:center;padding:60px 20px}
+  .empty-icon{color:var(--border);margin:0 auto 12px}
+  .empty-icon svg{width:40px;height:40px}
+  .empty-text{color:var(--text-3);font-size:14px;margin-bottom:16px}
+  .insp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  .insp-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .15s}
+  .insp-card:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 4px 16px rgba(61,140,64,.1)}
+  .insp-img{height:140px;background:var(--bg);overflow:hidden}
+  .insp-img img{width:100%;height:100%;object-fit:cover}
+  .insp-img-empty{height:140px;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--border)}
+  .insp-img-empty svg{width:32px;height:32px}
+  .insp-body{padding:14px}
+  .insp-cat{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+  .insp-cat.cr{color:var(--red)}
+  .insp-cat.po{color:var(--amber)}
+  .insp-cat.on{color:var(--blue)}
+  .insp-desc{font-size:13px;color:var(--text);font-weight:500;margin-bottom:8px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .insp-meta{font-size:11px;color:var(--text-3);display:flex;align-items:center;gap:8px}
+  .insp-foot{padding:10px 14px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+  .insp-company{font-size:11px;font-weight:600;color:var(--text-2)}
+  .fav-btn{background:none;border:none;cursor:pointer;padding:4px;color:var(--text-3);transition:color .15s}
+  .fav-btn:hover{color:#e91e63}
+  .fav-btn.active{color:#e91e63}
+  .fav-btn svg{width:16px;height:16px}
+
+  /* MODAL */
+  #modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+  #modal-overlay.open{display:flex}
+  .modal{background:#fff;border-radius:16px;max-width:600px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+  .modal-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:1}
+  .modal-title{font-size:16px;font-weight:600}
+  .modal-close{background:none;border:none;cursor:pointer;color:var(--text-3);padding:4px;border-radius:6px}
+  .modal-close:hover{background:var(--bg);color:var(--text)}
+  .modal-close svg{width:18px;height:18px;display:block}
+  .modal-body{padding:20px 24px}
+  .modal-images{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:16px}
+  .modal-images img{width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--border)}
+  .modal-field{margin-bottom:12px}
+  .modal-field-label{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--text-3);font-weight:600;margin-bottom:4px}
+  .modal-field-val{font-size:13px;color:var(--text);line-height:1.5}
+  .modal-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin-bottom:14px}
+  .modal-badge.cr{background:#fdeaea;color:var(--red)}
+  .modal-badge.po{background:#fef5e4;color:var(--amber)}
+  .modal-badge.on{background:#e8f1fa;color:var(--blue)}
+  .modal-actions{display:flex;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+
+  /* SEARCH */
+  .search-bar{display:flex;gap:10px;margin-bottom:20px}
+  .search-input{flex:1;border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-size:13px;font-family:var(--font);background:var(--surface);color:var(--text);outline:none}
+  .search-input:focus{border-color:var(--green)}
+  .search-cat{border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-size:13px;background:var(--surface);color:var(--text-2);font-family:var(--font);outline:none;cursor:pointer}
+  .search-btn{padding:11px 18px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:6px}
+  .search-btn svg{width:14px;height:14px}
+  .search-results-info{font-size:12px;color:var(--text-3);margin-bottom:12px}
+
+  /* FAVS */
+  .fav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+  .fav-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;position:relative}
+  .fav-card img{width:100%;height:120px;object-fit:cover}
+  .fav-card-body{padding:10px 12px}
+  .fav-card-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px}
+  .fav-card-sub{font-size:11px;color:var(--text-3)}
+  .fav-remove{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.5);border:none;border-radius:6px;padding:4px 6px;cursor:pointer;color:#fff;font-size:11px}
+
+  .list-sort{display:flex;align-items:center;gap:8px}
+  .sort-icon{color:var(--text-3);width:14px;height:14px}
+
+  #main::-webkit-scrollbar,#sidebar::-webkit-scrollbar{width:4px}
+  #main::-webkit-scrollbar-thumb,#sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+  /* LAUDO OVERLAY */
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media print{
+    #laudo-overlay{position:static!important;display:block!important;padding:0}
+    #sidebar,#main,#laudo-acoes,#toast{display:none!important}
+  }
+
+  /* TOPBAR MOBILE */
+  #topbar{
+    display:none;position:fixed;top:0;left:0;right:0;height:54px;
+    background:var(--teal-1);border-bottom:2px solid var(--brand);
+    z-index:90;align-items:center;padding:0 16px;gap:12px;
+  }
+  #hamburger{background:none;border:none;cursor:pointer;padding:7px;color:#fff;border-radius:6px;line-height:0}
+  #hamburger:hover{background:rgba(127,211,32,.15)}
+  #hamburger svg{width:22px;height:22px;display:block}
+  #topbar-title{color:#fff;font-size:14px;font-weight:600;flex:1}
+  #sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:89}
+  #sidebar-overlay.open{display:block}
+
+  /* TABLET (≤1024px) */
+  @media(max-width:1024px){
+    .form-row-4{grid-template-columns:1fr 1fr}
+    .form-card{max-width:100%}
+  }
+
+  /* MOBILE (≤768px) */
+  @media(max-width:768px){
+    body{flex-direction:column;height:auto;overflow:auto}
+    #topbar{display:flex}
+    #sidebar{
+      position:fixed;top:0;left:0;height:100vh;z-index:96;
+      transform:translateX(-110%);transition:transform .25s ease;
+    }
+    #sidebar.open{transform:translateX(0)}
+    #main{margin-top:54px;min-height:calc(100vh - 54px)}
+    .page{padding:20px 14px}
+    .page-title{font-size:20px}
+    .stat-grid{grid-template-columns:repeat(3,1fr)}
+    .stats-row{grid-template-columns:1fr 1fr}
+    .form-row{grid-template-columns:1fr}
+    .form-row-3{grid-template-columns:1fr}
+    .form-row-4{grid-template-columns:1fr 1fr}
+    .form-card{padding:18px 14px}
+    .search-bar{flex-wrap:wrap}
+    .search-cat{flex:1;min-width:120px}
+    .insp-grid{grid-template-columns:1fr}
+    .fav-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+    .modal-actions{flex-wrap:wrap}
+    .modal{max-height:95vh;border-radius:12px 12px 0 0;margin-top:auto}
+    #modal-overlay{align-items:flex-end;padding:0}
+    .list-header{flex-direction:column;align-items:flex-start;gap:12px}
+    .upload-zone{padding:20px 14px}
+  }
+
+  /* SMALL MOBILE (≤480px) */
+  @media(max-width:600px){
+    .stat-card{padding:12px}
+    .stat-num{font-size:22px}
+    .stat-label{font-size:11px}
+    .stat-sub{font-size:10px}
+    .stat-icon{width:28px;height:28px;margin-bottom:8px}
+    .page{padding:16px}
+  }
+  @media(max-width:480px){
+    .stat-grid{grid-template-columns:repeat(3,1fr)}
+    .form-row-4{grid-template-columns:1fr}
+    .stats-row{grid-template-columns:1fr 1fr}
+    .insp-foot{flex-wrap:wrap;gap:6px}
+    .form-actions{flex-direction:column}
+    .form-actions .btn{width:100%}
+    .modal-actions{flex-direction:column}
+    .modal-actions .btn{width:100%}
+    .search-bar{flex-direction:column}
+    .search-btn{justify-content:center}
+    .page-title{font-size:18px}
+    .form-card{padding:14px 10px}
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<!-- Laudo overlay (impressão in-page) -->
+<div id="laudo-overlay" style="display:none;position:fixed;inset:0;background:#fff;z-index:9999;overflow-y:auto;padding:20px">
+  <div style="max-width:900px;margin:0 auto">
+    <div id="laudo-acoes" style="margin-bottom:16px;display:flex;gap:8px">
+      <button onclick="window.print()" style="padding:8px 16px;cursor:pointer">🖨 Imprimir</button>
+      <button onclick="document.getElementById('laudo-overlay').style.display='none'" style="padding:8px 16px;cursor:pointer">✕ Fechar</button>
+    </div>
+    <div id="laudo-conteudo"></div>
+  </div>
+</div>
+
+<!-- Topbar mobile -->
+<div id="topbar">
+  <button id="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <span id="topbar-title">Catálogo de Defeitos</span>
+</div>
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<div id="sidebar">
+  <div class="sb-brand">
+    <div class="sb-logo-img">
+      <img src="data:image/png;base64,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" alt="Logo" style="width:110px;height:110px;object-fit:contain;display:block;margin:0 auto;">
+    </div>
+    <div style="margin-top:10px;text-align:center">
+      <div class="sb-title" style="text-align:center">Catálogo de Defeitos</div>
+      <div class="sb-sub" style="text-align:center">Inspeção Industrial</div>
+    </div>
+  </div>
+  <nav class="sb-nav">
+    <button class="sb-item active" onclick="nav('dashboard')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 5h2v-2h2v-2h-2v-2h-2v2h-2v2h2z"/></svg>
+      Dashboard
+    </button>
+    <button class="sb-item" onclick="nav('nova')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"/></svg>
+      Nova Inspeção
+    </button>
+
+    <button class="sb-item" onclick="nav('favoritos')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Favoritos
+    </button>
+    <button class="sb-item" onclick="nav('buscar')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      Buscar
+    </button>
+  </nav>
+  <div class="sb-footer">
+    <div class="sb-ver">v1.0 &bull; Sistema de Inspeção</div>
+  </div>
+</div>
+
+<div id="main">
+
+  <!-- DASHBOARD -->
+  <div class="page active" id="page-dashboard">
+    <div class="page-header">
+      <div class="page-title">Dashboard de Inspeções</div>
+      <div class="page-sub">Visão geral do catálogo de defeitos industriais</div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card crack">
+        <div class="stat-icon cr">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--red)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 11.5l-3-2.25L9 15.5V6h6v9.5z"/></svg>
+        </div>
+        <div class="stat-num" id="dash-trincas">0</div>
+        <div class="stat-label">Trincas</div>
+        <div class="stat-sub">inspeções registradas</div>
+      </div>
+      <div class="stat-card poros">
+        <div class="stat-icon po">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--amber)"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+        </div>
+        <div class="stat-num" id="dash-poros">0</div>
+        <div class="stat-label">Porosidades</div>
+        <div class="stat-sub">inspeções registradas</div>
+      </div>
+      <div class="stat-card ond">
+        <div class="stat-icon on">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--blue)"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+        </div>
+        <div class="stat-num" id="dash-ond">0</div>
+        <div class="stat-label">Ondulações</div>
+        <div class="stat-sub">inspeções registradas</div>
+      </div>
+    </div>
+
+    <div id="dash-recent-wrap" style="margin-top:20px;display:none">
+      <div class="section-card">
+        <div class="section-title">Inspeções Recentes</div>
+        <div class="insp-grid" id="dash-recent"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOVA INSPEÇÃO -->
+  <div class="page" id="page-nova">
+    <div class="page-header">
+      <div class="page-title">Nova Inspeção</div>
+      <div class="page-sub">Registre uma nova inspeção de defeito</div>
+    </div>
+    <div class="form-card">
+      <!-- BLOCO 1 -->
+      <div class="form-row-3">
+        <div class="form-group">
+          <label class="form-label">Cliente</label>
+          <input class="form-input" id="f-cliente" placeholder="Nome do cliente" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Obra</label>
+          <input class="form-input" id="f-obra" placeholder="Nome da obra / projeto" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Documento de Inspeção</label>
+          <input class="form-input" id="f-documento" placeholder="Nº do documento" type="text">
+        </div>
+      </div>
+      <!-- BLOCO 2 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Revisão</label>
+          <input class="form-input" id="f-revisao" placeholder="Ex: Rev. 02" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Data de Inspeção</label>
+          <input class="form-input" id="f-data" type="date">
+        </div>
+      </div>
+      <!-- BLOCO 3 -->
+      <div class="form-row-4">
+        <div class="form-group"><label class="form-label">Metal Base</label><input class="form-input" id="f-metalbase" placeholder="Ex: ASTM A36" type="text"></div>
+        <div class="form-group"><label class="form-label">Metal de Adição</label><input class="form-input" id="f-metaladic" placeholder="Ex: ER70S-6" type="text"></div>
+        <div class="form-group"><label class="form-label">Tratamento Térmico</label><input class="form-input" id="f-tratterm" placeholder="Ex: PWHT 620°C" type="text"></div>
+        <div class="form-group"><label class="form-label">Processo de Soldagem</label><input class="form-input" id="f-procsolda" placeholder="Ex: SMAW, GMAW" type="text"></div>
+      </div>
+      <!-- BLOCO 4 -->
+      <div class="form-group">
+        <label class="form-label">Condições Superficiais / Espessura</label>
+        <input class="form-input" id="f-condsup" placeholder="Ex: Lixada / 12,5 mm" type="text">
+      </div>
+      <!-- BLOCO 5: Penetrante -->
+      <div class="form-group" style="margin-top:8px">
+        <label class="form-label" style="color:var(--green-dark)">PENETRANTE</label>
+        <div class="form-row-4">
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Nome</label><input class="form-input" id="f-pen-nome" type="text"></div>
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Tipo/Lote</label><input class="form-input" id="f-pen-lote" type="text"></div>
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Tempo (min)</label><input class="form-input" id="f-pen-tempo" type="number" min="0"></div>
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Método</label><input class="form-input" id="f-pen-metodo" type="text"></div>
+        </div>
+      </div>
+      <!-- BLOCO 6: Removedor -->
+      <div class="form-group" style="margin-top:8px">
+        <label class="form-label" style="color:var(--green-dark)">REMOVEDOR</label>
+        <div class="form-row-4">
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Nome</label><input class="form-input" id="f-rem-nome" type="text"></div>
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Tipo/Lote</label><input class="form-input" id="f-rem-lote" type="text"></div>
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Tempo (min)</label><input class="form-input" id="f-rem-tempo" type="number" min="0"></div>
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Temperatura/Instrumento</label><input class="form-input" id="f-rem-temp" type="text"></div>
+        </div>
+      </div>
+      <!-- BLOCO 7: Revelador -->
+      <div class="form-group" style="margin-top:8px">
+        <label class="form-label" style="color:var(--green-dark)">REVELADOR</label>
+        <div class="form-row-4">
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Nome</label><input class="form-input" id="f-rev-nome" type="text"></div>
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Tipo/Lote</label><input class="form-input" id="f-rev-lote" type="text"></div>
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Tempo (min)</label><input class="form-input" id="f-rev-tempo" type="number" min="0"></div>
+          <div class="form-group" style="margin-bottom:0"><label class="form-label">Limpeza Final</label><select class="form-select" id="f-rev-limpeza"><option value="">-</option><option value="OK">OK</option><option value="NOK">NOK</option></select></div>
+        </div>
+      </div>
+      <!-- BLOCO 8: Iluminacao -->
+      <div class="form-group" style="margin-top:8px">
+        <label class="form-label" style="color:var(--green-dark)">ILUMINAÇÃO</label>
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">Intensidade Luz Branca (lux)</label>
+            <div style="display:flex;gap:8px">
+              <input class="form-input" id="f-lux-valor" placeholder="Valor" type="number" min="0">
+              <input class="form-input" id="f-lux-inst" placeholder="Instrumento" type="text">
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">Intensidade Luz Negra (µW/cm²)</label>
+            <div style="display:flex;gap:8px">
+              <input class="form-input" id="f-uv-valor" placeholder="Valor" type="number" min="0">
+              <input class="form-input" id="f-uv-inst" placeholder="Instrumento" type="text">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- BLOCO 9: Normas -->
+      <div class="form-row" style="margin-top:16px">
+        <div class="form-group">
+          <label class="form-label">Procedimento de Inspeção/REV</label>
+          <input class="form-input" id="f-procedimento" placeholder="Ex: PT-001 / Rev. 02" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Norma/Critério de Aceitação</label>
+          <input class="form-input" id="f-norma" placeholder="Ex: ASME V Art. 6" type="text">
+        </div>
+      </div>
+      <!-- BLOCO 10: Tabela de Resultados -->
+      <div class="form-group">
+        <label class="form-label">Registros dos Resultados</label>
+        <table id="resultados-tabela" style="width:100%;border-collapse:collapse;font-size:12px">
+          <thead><tr style="background:var(--bg)">
+            <th style="border:1px solid var(--border);padding:6px;text-align:left;font-size:11px;text-transform:uppercase">Junta/Peça</th>
+            <th style="border:1px solid var(--border);padding:6px;text-align:left;font-size:11px;text-transform:uppercase">Nº Indicação</th>
+            <th style="border:1px solid var(--border);padding:6px;text-align:left;font-size:11px;text-transform:uppercase">Local</th>
+            <th style="border:1px solid var(--border);padding:6px;text-align:left;font-size:11px;text-transform:uppercase">Tamanho</th>
+            <th style="border:1px solid var(--border);padding:6px;text-align:left;font-size:11px;text-transform:uppercase">Tipo de Defeito</th>
+            <th style="border:1px solid var(--border);padding:6px;text-align:center;font-size:11px;text-transform:uppercase">Laudo</th>
+            <th style="border:1px solid var(--border);padding:6px;width:32px"></th>
+          </tr></thead>
+          <tbody id="resultados-tbody"></tbody>
+        </table>
+        <button class="btn btn-secondary btn-sm" onclick="adicionarLinha()" style="margin-top:8px">+ Adicionar Linha</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Categoria *</label>
+        <select class="form-select" id="f-cat">
+          <option value="Trincas">Trincas</option>
+          <option value="Porosidades">Porosidades</option>
+          <option value="Descontinuidades em Solda">Descontinuidades em Solda</option>
+          <option value="Defeitos de Fundição/Forjamento">Defeitos de Fundição/Forjamento</option>
+          <option value="Vazamentos">Vazamentos</option>
+          <option value="Corrosão">Corrosão</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Nome do Inspetor *</label>
+          <input class="form-input" id="f-inspetor" placeholder="Ex: Carlos Mendes" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nome da Empresa *</label>
+          <input class="form-input" id="f-empresa" placeholder="Ex: Indústria ABC" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Descrição do Defeito *</label>
+        <textarea class="form-textarea" id="f-desc" placeholder="Descreva o defeito encontrado para facilitar a identificação futura..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Especificações Técnicas</label>
+        <textarea class="form-textarea" id="f-specs" placeholder="Dimensões, materiais, normas aplicáveis, etc."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Imagens do Defeito * (máx. 50)</label>
+        <div class="upload-zone" id="upload-zone" onclick="document.getElementById('f-imgs').click()" ondragover="event.preventDefault()" ondrop="handleDrop(event)">
+          <div class="upload-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg></div>
+          <div class="upload-text">Arraste e solte as imagens aqui</div>
+          <div class="upload-sub">ou clique para selecionar (máx. 50 imagens)</div>
+        </div>
+        <input type="file" id="f-imgs" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+        <div class="preview-grid" id="preview-grid"></div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" onclick="salvarInspecao()">Registrar Inspeção</button>
+        <button class="btn btn-secondary" onclick="limparForm()">Limpar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRINCAS -->
+  <div class="page" id="page-trincas">
+    <div class="list-header">
+      <div>
+        <div class="page-title">Trincas</div>
+        <div class="page-sub" id="count-trincas">0 inspeções encontradas</div>
+      </div>
+      <div class="list-sort">
+        <svg class="sort-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/></svg>
+        <select class="sort-select" onchange="renderList('trincas')"><option>Mais Recentes</option><option>Mais Antigas</option></select>
+      </div>
+    </div>
+    <div id="list-trincas"></div>
+  </div>
+
+  <!-- POROSIDADES -->
+  <div class="page" id="page-porosidades">
+    <div class="list-header">
+      <div>
+        <div class="page-title">Porosidades</div>
+        <div class="page-sub" id="count-porosidades">0 inspeções encontradas</div>
+      </div>
+      <div class="list-sort">
+        <svg class="sort-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/></svg>
+        <select class="sort-select" onchange="renderList('porosidades')"><option>Mais Recentes</option><option>Mais Antigas</option></select>
+      </div>
+    </div>
+    <div id="list-porosidades"></div>
+  </div>
+
+  <!-- ONDULAÇÕES -->
+  <div class="page" id="page-ondulacoes">
+    <div class="list-header">
+      <div>
+        <div class="page-title">Ondulações</div>
+        <div class="page-sub" id="count-ondulacoes">0 inspeções encontradas</div>
+      </div>
+      <div class="list-sort">
+        <svg class="sort-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/></svg>
+        <select class="sort-select" onchange="renderList('ondulacoes')"><option>Mais Recentes</option><option>Mais Antigas</option></select>
+      </div>
+    </div>
+    <div id="list-ondulacoes"></div>
+  </div>
+
+  <!-- FAVORITOS -->
+  <div class="page" id="page-favoritos">
+    <div class="page-header">
+      <div class="page-title">Galeria de Favoritos</div>
+      <div class="page-sub" id="count-favs">0 imagens salvas</div>
+    </div>
+    <div id="fav-content"></div>
+  </div>
+
+  <!-- BUSCAR -->
+  <div class="page" id="page-buscar">
+    <div class="page-header">
+      <div class="page-title">Buscar Inspeções</div>
+      <div class="page-sub">Encontre inspeções por inspetor, empresa ou descrição</div>
+    </div>
+    <div class="search-bar">
+      <input class="search-input" id="search-q" placeholder="Digite sua busca..." type="text" onkeydown="if(event.key==='Enter')buscar()">
+      <select class="search-cat" id="search-cat">
+        <option value="">Todas as Categorias</option>
+        <option value="Trincas">Trincas</option>
+        <option value="Porosidades">Porosidades</option>
+        <option value="Ondulações">Ondulações</option>
+      </select>
+      <button class="search-btn" onclick="buscar()">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        Buscar
+      </button>
+    </div>
+    <div id="search-results"></div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal-overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <span class="modal-title">Detalhes da Inspeção</span>
+      <button class="modal-close" onclick="closeModal()">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<div id="toast"><div class="t-dot"></div><span id="toast-msg"></span></div>
+
+<script>
+let inspData = [];
+let favData = [];
+let selectedImgs = [];
+
+// ── Supabase ────────────────────────────────────────────────────────────────
+const SUPABASE_URL = 'https://oozqlvifbiizgzdovyvv.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9venFsdmlmYmlpemd6ZG92eXZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1OTg4MDYsImV4cCI6MjA5MTE3NDgwNn0.ecZ2L-mKdUrqlQowVxWTdbOjfJ9xa_AYqyZiXJ2iIys';
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+function showLoading(on) {
+  const el = document.getElementById('loading-overlay');
+  el.style.display = on ? 'flex' : 'none';
+}
+
+// Adapters: JS <-> DB field names
+function inspToDb(r) {
+  return {
+    cat: r.cat, inspetor: r.inspetor, empresa: r.empresa,
+    descricao: r.desc, specs: r.specs, date: r.date,
+    cliente: r.cliente||'', obra: r.obra||'', documento: r.documento||'',
+    revisao: r.revisao||'', metalbase: r.metalbase||'', metaladic: r.metaladic||'',
+    tratterm: r.tratterm||'', procsolda: r.procsolda||'', condsup: r.condsup||'',
+    pen: r.pen||{}, rem: r.rem||{}, rev: r.rev||{},
+    lux: r.lux||{}, uv: r.uv||{},
+    procedimento: r.procedimento||'', norma: r.norma||'',
+    resultados: r.resultados||[], imgs: r.imgs||[]
+  };
+}
+
+function inspFromDb(row) {
+  return {
+    id: row.id, cat: row.cat, inspetor: row.inspetor, empresa: row.empresa,
+    desc: row.descricao, specs: row.specs, date: row.date,
+    cliente: row.cliente||'', obra: row.obra||'', documento: row.documento||'',
+    revisao: row.revisao||'', metalbase: row.metalbase||'', metaladic: row.metaladic||'',
+    tratterm: row.tratterm||'', procsolda: row.procsolda||'', condsup: row.condsup||'',
+    pen: row.pen||{}, rem: row.rem||{}, rev: row.rev||{},
+    lux: row.lux||{}, uv: row.uv||{},
+    procedimento: row.procedimento||'', norma: row.norma||'',
+    resultados: row.resultados||[], imgs: row.imgs||[]
+  };
+}
+
+function favFromDb(row) { return { inspId: row.insp_id, imgIdx: row.img_idx }; }
+
+// localStorage fallback
+function saveLocal() {
+  try {
+    localStorage.setItem('defect_inspections', JSON.stringify(inspData));
+    localStorage.setItem('defect_favorites', JSON.stringify(favData));
+  } catch(e) {}
+}
+
+function loadLocal() {
+  try { inspData = JSON.parse(localStorage.getItem('defect_inspections') || '[]'); } catch(e) { inspData = []; }
+  try { favData = JSON.parse(localStorage.getItem('defect_favorites') || '[]'); } catch(e) { favData = []; }
+}
+
+async function initData() {
+  showLoading(true);
+  try {
+    const [r1, r2] = await Promise.all([
+      sb.from('inspections').select('*').order('created_at', {ascending: false}),
+      sb.from('favorites').select('*')
+    ]);
+    if (r1.error) throw r1.error;
+    if (r2.error) throw r2.error;
+    inspData = (r1.data || []).map(inspFromDb);
+    favData  = (r2.data || []).map(favFromDb);
+    if (inspData.length === 0) await seedData();
+    saveLocal();
+  } catch(err) {
+    console.warn('Supabase indisponível, usando localStorage:', err.message || err);
+    loadLocal();
+    if (inspData.length === 0) { seedDataLocal(); }
+  } finally {
+    showLoading(false);
+  }
+}
+
+const SEED_RECORDS = [
+  {cat:'Trincas',inspetor:'Carlos Mendes',empresa:'AçoTech Brasil',desc:'Trinca longitudinal identificada na superfície do componente metálico após processo de laminação a frio.',specs:'Comprimento: 12mm | Material: Aço SAE 1020 | Norma: ABNT NBR 6152',imgs:[],date:'2024-01-15'},
+  {cat:'Trincas',inspetor:'Ana Silva',empresa:'Metalúrgica Norte',desc:'Microtrincas detectadas na zona de solda durante inspeção por ultrassom.',specs:'Profundidade estimada: 2-3mm | Eletrodo E7018 | Pré-aquecimento insuficiente',imgs:[],date:'2024-01-22'},
+  {cat:'Porosidades',inspetor:'Roberto Lima',empresa:'Fundição Sul',desc:'Porosidades internas distribuídas identificadas em peça fundida de alumínio.',specs:'Diâmetro médio: 1,5mm | Alumínio A380 | Temperatura de vazamento irregular',imgs:[],date:'2024-02-03'},
+  {cat:'Porosidades',inspetor:'Fernanda Costa',empresa:'Ind. Precisão SP',desc:'Porosidade superficial causada por contaminação do fundente durante processo TIG.',specs:'Área afetada: 8cm² | Aço inoxidável 316L | Gás de proteção comprometido',imgs:[],date:'2024-02-18'},
+  {cat:'Descontinuidades em Solda',inspetor:'Marcos Oliveira',empresa:'Chapas Express',desc:'Ondulações na borda de chapa laminada a frio, causadas por variação de espessura no processo.',specs:'Amplitude: 0,8mm | Chapa 2mm ABNT 1006 | Ajuste de cilindros necessário',imgs:[],date:'2024-03-07'},
+  {cat:'Corrosão',inspetor:'Patricia Ramos',empresa:'AçoTech Brasil',desc:'Deformação ondulatória detectada em região central de painel estampado.',specs:'Extensão: 35cm | Chapa galvanizada 0,6mm | Pressão de estampagem irregular',imgs:[],date:'2024-03-19'},
+];
+
+async function seedData() {
+  try {
+    const { data, error } = await sb.from('inspections')
+      .insert(SEED_RECORDS.map(inspToDb)).select();
+    if (error) throw error;
+    inspData = (data || []).map(inspFromDb);
+  } catch(err) {
+    console.warn('Seed Supabase falhou:', err.message || err);
+    seedDataLocal();
+  }
+}
+
+function seedDataLocal() {
+  inspData = SEED_RECORDS.map((s, i) => ({...s, id: String(i + 1)}));
+  saveLocal();
+}
+
+function saveData() { saveLocal(); }
+
+function catClass(cat) {
+  if (cat === 'Trincas') return 'cr';
+  if (cat === 'Porosidades') return 'po';
+  return 'on';
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+function toggleSidebar() {
+  const sb = document.getElementById('sidebar');
+  const ov = document.getElementById('sidebar-overlay');
+  sb.classList.toggle('open');
+  ov.classList.toggle('open');
+}
+
+function nav(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  const map = {dashboard:0,nova:1,favoritos:2,buscar:3,trincas:99,porosidades:99,ondulacoes:99};
+  if (map[page] < 10) document.querySelectorAll('.sb-item')[map[page]].classList.add('active');
+  // Fecha sidebar em mobile ao navegar
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.remove('open');
+  document.getElementById('main').scrollTop = 0;
+  if (page === 'dashboard') updateDash();
+  if (page === 'trincas') renderList('trincas');
+  if (page === 'porosidades') renderList('porosidades');
+  if (page === 'ondulacoes') renderList('ondulacoes');
+  if (page === 'favoritos') renderFavs();
+  if (page === 'buscar') { document.getElementById('search-results').innerHTML = ''; document.getElementById('search-q').value = ''; }
+}
+
+function updateDash() {
+  const tr = inspData.filter(i => i.cat === 'Trincas').length;
+  const po = inspData.filter(i => i.cat === 'Porosidades').length;
+  const on = inspData.filter(i => i.cat === 'Ondulações').length;
+  const tot = inspData.length;
+  document.getElementById('dash-trincas').textContent = tr;
+  document.getElementById('dash-poros').textContent = po;
+  document.getElementById('dash-ond').textContent = on;
+
+  const wrap = document.getElementById('dash-recent-wrap');
+  if (tot > 0) {
+    wrap.style.display = 'block';
+    const rec = [...inspData].reverse().slice(0, 3);
+    document.getElementById('dash-recent').innerHTML = rec.map(i => cardHTML(i)).join('');
+  } else { wrap.style.display = 'none'; }
+}
+
+function cardHTML(insp) {
+  const cc = catClass(insp.cat);
+  const imgHtml = insp.imgs && insp.imgs.length > 0
+    ? `<div class="insp-img"><img src="${insp.imgs[0]}" alt=""></div>`
+    : `<div class="insp-img-empty"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>`;
+  const isFav = favData.some(f => f.inspId === insp.id);
+  return `<div class="insp-card" onclick="openModal('${insp.id}')">
+    ${imgHtml}
+    <div class="insp-body">
+      <div class="insp-cat ${cc}">${insp.cat}</div>
+      <div class="insp-desc">${insp.desc}</div>
+      <div class="insp-meta">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:11px;height:11px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        ${insp.inspetor} &bull; ${formatDate(insp.date)}
+      </div>
+    </div>
+    <div class="insp-foot">
+      <span class="insp-company">${insp.empresa}</span>
+      <div style="display:flex;align-items:center;gap:6px">
+        <button class="btn btn-secondary btn-sm" onclick="event.stopPropagation();gerarLaudo('${insp.id}')" style="font-size:11px;padding:4px 9px">Laudo</button>
+        <button class="fav-btn ${isFav ? 'active' : ''}" onclick="event.stopPropagation();toggleFav('${insp.id}')">
+          <svg viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function formatDate(d) {
+  if (!d) return '';
+  const [y, m, day] = d.split('-');
+  return `${day}/${m}/${y}`;
+}
+
+function renderList(type) {
+  const catMap = {trincas:'Trincas', porosidades:'Porosidades', ondulacoes:'Ondulações'};
+  const cat = catMap[type];
+  let items = inspData.filter(i => i.cat === cat);
+  const sel = document.querySelector(`#page-${type} select`);
+  if (sel && sel.value === 'Mais Antigas') items = [...items];
+  else items = [...items].reverse();
+  document.getElementById('count-' + type).textContent = `${items.length} inspeções encontradas`;
+  const cont = document.getElementById('list-' + type);
+  if (items.length === 0) {
+    cont.innerHTML = `<div class="empty-state">
+      <div class="empty-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg></div>
+      <div class="empty-text">Nenhuma inspeção encontrada nesta categoria</div>
+      <button class="btn btn-primary btn-sm" onclick="nav('nova')">Criar Primeira Inspeção</button>
+    </div>`;
+  } else {
+    cont.innerHTML = `<div class="insp-grid">${items.map(i => cardHTML(i)).join('')}</div>`;
+  }
+}
+
+function renderFavs() {
+  const imgs = [];
+  inspData.forEach(insp => {
+    if (insp.imgs && insp.imgs.length > 0) {
+      insp.imgs.forEach((img, idx) => {
+        if (favData.some(f => f.inspId === insp.id && f.imgIdx === idx)) imgs.push({img, insp, idx});
+      });
+    } else {
+      if (favData.some(f => f.inspId === insp.id && f.imgIdx === -1)) imgs.push({img: null, insp, idx: -1});
+    }
+  });
+  document.getElementById('count-favs').textContent = `${imgs.length} imagens salvas`;
+  const cont = document.getElementById('fav-content');
+  if (imgs.length === 0) {
+    cont.innerHTML = `<div class="empty-state">
+      <div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--border)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+      <div class="empty-text">Nenhuma imagem nos favoritos</div>
+      <div style="font-size:12px;color:var(--text-3);margin-top:4px">Clique no ícone de coração nas inspeções para adicioná-las aos favoritos</div>
+    </div>`;
+  } else {
+    cont.innerHTML = `<div class="fav-grid">${imgs.map(({img, insp, idx}) => `
+      <div class="fav-card">
+        ${img
+          ? `<img src="${img}" alt="">`
+          : `<div style="height:120px;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--border)"><svg viewBox="0 0 24 24" fill="currentColor" style="width:32px;height:32px"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>`
+        }
+        <div class="fav-card-body">
+          <div class="fav-card-title">${insp.cat}</div>
+          <div class="fav-card-sub">${insp.empresa}</div>
+        </div>
+        <button class="fav-remove" onclick="removeFav('${insp.id}',${idx})">&#x2715;</button>
+      </div>`).join('')}</div>`;
+  }
+}
+
+async function toggleFav(inspId) {
+  const insp = inspData.find(i => i.id === inspId);
+  if (!insp) return;
+  const imgIdx = (insp.imgs && insp.imgs.length > 0) ? 0 : -1;
+  const pos = favData.findIndex(f => f.inspId === inspId && f.imgIdx === imgIdx);
+  if (pos >= 0) {
+    favData.splice(pos, 1);
+    try { await sb.from('favorites').delete().eq('insp_id', inspId).eq('img_idx', imgIdx); }
+    catch(err) { console.warn(err.message || err); }
+    showToast('Removido dos favoritos');
+  } else {
+    favData.push({inspId, imgIdx});
+    try { await sb.from('favorites').insert([{insp_id: inspId, img_idx: imgIdx}]); }
+    catch(err) { console.warn(err.message || err); }
+    showToast('Adicionado aos favoritos ♡');
+  }
+  saveLocal();
+}
+
+async function removeFav(inspId, imgIdx) {
+  favData = favData.filter(f => !(f.inspId === inspId && f.imgIdx === imgIdx));
+  try { await sb.from('favorites').delete().eq('insp_id', inspId).eq('img_idx', imgIdx); }
+  catch(err) { console.warn(err.message || err); }
+  saveLocal(); renderFavs(); showToast('Removido dos favoritos');
+}
+
+function buscar() {
+  const q = document.getElementById('search-q').value.toLowerCase().trim();
+  const cat = document.getElementById('search-cat').value;
+  const res = inspData.filter(i => {
+    const matchCat = !cat || i.cat === cat;
+    const matchQ = !q || (i.desc.toLowerCase().includes(q) || i.inspetor.toLowerCase().includes(q) || i.empresa.toLowerCase().includes(q));
+    return matchCat && matchQ;
+  });
+  const cont = document.getElementById('search-results');
+  if (res.length === 0) {
+    cont.innerHTML = `<div class="empty-state"><div class="empty-text">Nenhuma inspeção encontrada para esta busca</div></div>`;
+  } else {
+    cont.innerHTML = `<div style="font-size:12px;color:var(--text-3);margin-bottom:12px">${res.length} resultado${res.length !== 1 ? 's' : ''} encontrado${res.length !== 1 ? 's' : ''}</div><div class="insp-grid">${res.map(i => cardHTML(i)).join('')}</div>`;
+  }
+}
+
+function openModal(id) {
+  const insp = inspData.find(i => i.id === id);
+  if (!insp) return;
+  const cc = catClass(insp.cat);
+  const isFav = favData.some(f => f.inspId === id);
+  document.getElementById('modal-body').innerHTML = `
+    <span class="modal-badge ${cc}">${insp.cat}</span>
+    ${insp.imgs && insp.imgs.length > 0 ? `<div class="modal-images">${insp.imgs.map(img => `<img src="${img}" alt="">`).join('')}</div>` : ''}
+    <div class="modal-field"><div class="modal-field-label">Descrição</div><div class="modal-field-val">${insp.desc}</div></div>
+    ${insp.specs ? `<div class="modal-field"><div class="modal-field-label">Especificações Técnicas</div><div class="modal-field-val" style="font-family:monospace;font-size:12px;color:var(--text-2);background:var(--bg);padding:10px;border-radius:6px">${insp.specs}</div></div>` : ''}
+    <div class="modal-field"><div class="modal-field-label">Inspetor</div><div class="modal-field-val">${insp.inspetor}</div></div>
+    <div class="modal-field"><div class="modal-field-label">Empresa</div><div class="modal-field-val">${insp.empresa}</div></div>
+    <div class="modal-field"><div class="modal-field-label">Data</div><div class="modal-field-val">${formatDate(insp.date)}</div></div>
+    <div class="modal-actions">
+      <button class="btn btn-primary btn-sm" onclick="gerarLaudo('${id}')">Gerar Laudo</button>
+      <button class="btn btn-secondary btn-sm" onclick="toggleFav('${id}');closeModal()" style="display:flex;align-items:center;gap:6px">
+        <svg viewBox="0 0 24 24" fill="${isFav ? '#e91e63' : 'none'}" stroke="${isFav ? '#e91e63' : 'currentColor'}" stroke-width="2" style="width:14px;height:14px"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        ${isFav ? 'Remover Favorito' : 'Adicionar Favorito'}
+      </button>
+      <button class="btn btn-danger btn-sm" onclick="deletarInsp('${id}')">Excluir Inspeção</button>
+    </div>`;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal() { document.getElementById('modal-overlay').classList.remove('open'); }
+
+async function deletarInsp(id) {
+  if (!confirm('Tem certeza que deseja excluir esta inspeção?')) return;
+  try {
+    const { error } = await sb.from('inspections').delete().eq('id', id);
+    if (error) console.warn('Delete error:', error.message);
+  } catch(err) { console.warn('Delete falhou:', err.message || err); }
+  inspData = inspData.filter(i => i.id !== id);
+  favData = favData.filter(f => f.inspId !== id);
+  saveLocal(); closeModal(); updateDash(); showToast('Inspeção excluída');
+  ['trincas','porosidades','ondulacoes'].forEach(t => {
+    if (document.getElementById('page-' + t).classList.contains('active')) renderList(t);
+  });
+}
+
+function gerarLaudo(id) {
+  const i = inspData.find(function(x){ return x.id === id; });
+  if (!i) return;
+  const v = function(s){ return s || ''; };
+  const pen = i.pen || {};
+  const rem = i.rem || {};
+  const rev = i.rev || {};
+  const lux = i.lux || {};
+  const uv  = i.uv  || {};
+  const dataExib = i.data ? formatDate(i.data) : formatDate(i.date);
+
+  let resultRows = '';
+  if (i.resultados && i.resultados.length > 0) {
+    i.resultados.forEach(function(r) {
+      resultRows +=
+        '<tr>' +
+        '<td style="padding:5px 7px;border:1px solid #555">' + v(r.junta) + '</td>' +
+        '<td style="padding:5px 7px;border:1px solid #555;text-align:center">' + v(r.nind) + '</td>' +
+        '<td style="padding:5px 7px;border:1px solid #555">' + v(r.local) + '</td>' +
+        '<td style="padding:5px 7px;border:1px solid #555">' + v(r.tamanho) + '</td>' +
+        '<td style="padding:5px 7px;border:1px solid #555">' + v(r.tipo) + '</td>' +
+        '<td style="padding:5px 7px;border:1px solid #555;text-align:center;font-weight:bold">' + v(r.laudo) + '</td>' +
+        '</tr>';
+    });
+  } else {
+    for (var ri = 0; ri < 3; ri++) {
+      resultRows += '<tr><td style="padding:12px 7px;border:1px solid #555">&nbsp;</td><td style="border:1px solid #555"></td><td style="border:1px solid #555"></td><td style="border:1px solid #555"></td><td style="border:1px solid #555"></td><td style="border:1px solid #555"></td></tr>';
+    }
+  }
+
+  let galleryHtml = '';
+  if (i.imgs && i.imgs.length > 0) {
+    i.imgs.forEach(function(src, idx) {
+      galleryHtml += '<div style="text-align:center;break-inside:avoid"><img src="' + src + '" style="width:100%;height:160px;object-fit:cover;border:1px solid #999;display:block"><div style="font-size:8px;margin-top:3px;color:#444">Figura ' + (idx + 1) + '</div></div>';
+    });
+  }
+  const gallerySection = galleryHtml
+    ? '<tr><td colspan="4" style="padding:0"><div style="background:#222;color:#fff;font-weight:bold;font-size:9px;text-transform:uppercase;padding:4px 6px;letter-spacing:.5px">Registro Fotogr\u00e1fico / Photographic Record</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px">' + galleryHtml + '</div></td></tr>'
+    : '';
+
+  const luzBranca = (v(lux.valor) ? v(lux.valor) + ' lux' : '') + (v(lux.inst) ? ' \u2014 ' + v(lux.inst) : '');
+  const luzNegra  = (v(uv.valor) ? v(uv.valor) + ' \u00b5W/cm\u00b2' : '') + (v(uv.inst) ? ' \u2014 ' + v(uv.inst) : '');
+
+  const css = [
+    '*{box-sizing:border-box;margin:0;padding:0}',
+    'body{font-family:Arial,sans-serif;font-size:10px;color:#000;background:#fff;padding:18px}',
+    'table{width:100%;border-collapse:collapse}',
+    'td,th{border:1px solid #555;padding:4px 6px;vertical-align:top}',
+    '.lbl{font-size:7.5px;font-weight:bold;text-transform:uppercase;color:#444;letter-spacing:.4px;line-height:1.2}',
+    '.val{font-size:10px;min-height:14px;padding-top:2px}',
+    '.sec{background:#222;color:#fff;font-weight:bold;font-size:8.5px;text-transform:uppercase;letter-spacing:.5px;padding:4px 6px}',
+    '.center{text-align:center}',
+    '.actions{margin-bottom:14px;display:flex;gap:8px}',
+    '.actions button{padding:7px 16px;font-size:12px;cursor:pointer;border:1px solid #555;background:#f0f0f0;border-radius:3px}',
+    'th{background:#e8e8e8;font-size:8.5px;text-transform:uppercase;text-align:center;font-weight:bold}',
+    '.sig td{height:64px;vertical-align:bottom;text-align:center;font-size:8px}',
+    '.sig-line{border-top:1px solid #555;padding-top:4px;margin-top:8px}',
+    '@media print{.actions{display:none}body{padding:8px}}'
+  ].join('');
+
+  const html =
+    '<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">' +
+    '<title>Laudo LP \u2014 ' + v(i.empresa) + '</title>' +
+    '<style>' + css + '</style></head><body>' +
+    '<table>' +
+    '<tr><td colspan="4" class="center" style="background:#111;color:#fff;font-size:13px;font-weight:bold;letter-spacing:1px;padding:8px;text-transform:uppercase">Laudo de Inspe\u00e7\u00e3o por L\u00edquido Penetrante / Liquid Penetrant Test Report</td></tr>' +
+    // 1. Cabecalho
+    '<tr>' +
+    '<td><div class="lbl">Cliente / Customer</div><div class="val">' + v(i.cliente) + '</div></td>' +
+    '<td><div class="lbl">Obra / Job</div><div class="val">' + v(i.obra) + '</div></td>' +
+    '<td><div class="lbl">Documento / Document</div><div class="val">' + v(i.documento) + '</div></td>' +
+    '<td><div class="lbl">Data de Inspe\u00e7\u00e3o / Date</div><div class="val">' + dataExib + '</div></td>' +
+    '</tr>' +
+    // 2. Empresa
+    '<tr><td colspan="4" class="center" style="font-weight:bold;font-size:12px;text-transform:uppercase;padding:6px 4px;letter-spacing:.5px">' + v(i.empresa) + '</td></tr>' +
+    // 3. Descricao + Revisao
+    '<tr>' +
+    '<td colspan="3"><div class="lbl">Descri\u00e7\u00e3o / Description</div><div class="val">' + v(i.desc) + '</div></td>' +
+    '<td><div class="lbl">Revis\u00e3o / Rev.</div><div class="val">' + v(i.revisao) + '</div></td>' +
+    '</tr>' +
+    // 4. Materiais
+    '<tr><td colspan="4" class="sec">Materiais / Materials</td></tr>' +
+    '<tr>' +
+    '<td><div class="lbl">Metal Base / Base Metal</div><div class="val">' + v(i.metalbase) + '</div></td>' +
+    '<td><div class="lbl">Metal de Adi\u00e7\u00e3o / Filler Metal</div><div class="val">' + v(i.metaladic) + '</div></td>' +
+    '<td><div class="lbl">Tratamento T\u00e9rmico / Heat Treatment</div><div class="val">' + v(i.tratterm) + '</div></td>' +
+    '<td><div class="lbl">Processo de Soldagem / Welding Process</div><div class="val">' + v(i.procsolda) + '</div></td>' +
+    '</tr>' +
+    '<tr><td colspan="4"><div class="lbl">Condi\u00e7\u00f5es Superficiais / Espessura \u2014 Surface Condition / Thickness</div><div class="val">' + v(i.condsup) + '</div></td></tr>' +
+    // 5. Penetrante
+    '<tr><td colspan="4" class="sec">Penetrante / Penetrant</td></tr>' +
+    '<tr><th>Nome / Name</th><th>Tipo/Lote \u2014 Type/Lot</th><th>Tempo (min)</th><th>M\u00e9todo / Method</th></tr>' +
+    '<tr>' +
+    '<td class="val">' + v(pen.nome) + '</td>' +
+    '<td class="val">' + v(pen.lote) + '</td>' +
+    '<td class="val center">' + v(pen.tempo) + '</td>' +
+    '<td class="val">' + v(pen.metodo) + '</td>' +
+    '</tr>' +
+    // 6. Removedor
+    '<tr><td colspan="4" class="sec">Removedor / Remover</td></tr>' +
+    '<tr><th>Nome / Name</th><th>Tipo/Lote \u2014 Type/Lot</th><th>Tempo (min)</th><th>Temperatura / Instrumento</th></tr>' +
+    '<tr>' +
+    '<td class="val">' + v(rem.nome) + '</td>' +
+    '<td class="val">' + v(rem.lote) + '</td>' +
+    '<td class="val center">' + v(rem.tempo) + '</td>' +
+    '<td class="val">' + v(rem.temp) + '</td>' +
+    '</tr>' +
+    // 7. Revelador
+    '<tr><td colspan="4" class="sec">Revelador / Developer</td></tr>' +
+    '<tr><th>Nome / Name</th><th>Tipo/Lote \u2014 Type/Lot</th><th>Tempo (min)</th><th>Limpeza Final / Final Cleaning</th></tr>' +
+    '<tr>' +
+    '<td class="val">' + v(rev.nome) + '</td>' +
+    '<td class="val">' + v(rev.lote) + '</td>' +
+    '<td class="val center">' + v(rev.tempo) + '</td>' +
+    '<td class="val center">' + v(rev.limpeza) + '</td>' +
+    '</tr>' +
+    // 8. Luz
+    '<tr><td colspan="4" class="sec">Ilumina\u00e7\u00e3o / Lighting</td></tr>' +
+    '<tr>' +
+    '<td colspan="2"><div class="lbl">Intensidade Luz Branca / White Light Intensity</div><div class="val">' + luzBranca + '</div></td>' +
+    '<td colspan="2"><div class="lbl">Intensidade Luz Negra / Black Light Intensity</div><div class="val">' + luzNegra + '</div></td>' +
+    '</tr>' +
+    // 9. Normas
+    '<tr>' +
+    '<td colspan="2"><div class="lbl">Procedimento / REV \u2014 Inspection Procedure / Rev.</div><div class="val">' + v(i.procedimento) + '</div></td>' +
+    '<td colspan="2"><div class="lbl">Norma / Crit\u00e9rio de Aceita\u00e7\u00e3o \u2014 Standard / Acceptance Criteria</div><div class="val">' + v(i.norma) + '</div></td>' +
+    '</tr>' +
+    '</table>' +
+    // 10. Resultados
+    '<table style="border-top:none">' +
+    '<colgroup><col style="width:18%"><col style="width:10%"><col style="width:14%"><col style="width:12%"><col style="width:28%"><col style="width:18%"></colgroup>' +
+    '<tr><td colspan="6" class="sec center">Registros dos Resultados / Test Results Record</td></tr>' +
+    '<tr><th>Junta/Pe\u00e7a</th><th>N\u00ba Ind.</th><th>Local</th><th>Tamanho</th><th>Tipo de Defeito / Defect Type</th><th>Laudo / Result</th></tr>' +
+    resultRows +
+    // 11. Legenda
+    '<tr><td colspan="6" style="font-size:8px;padding:4px 6px;background:#f5f5f5">' +
+    '<strong>Legenda:</strong>&nbsp; <strong>A</strong>=Aprovado/Accepted &nbsp;<strong>R</strong>=Reprovado/Rejected &nbsp;<strong>REC</strong>=Recomenda\u00e7\u00e3o &nbsp;&nbsp;' +
+    '<strong>TL</strong>=Trinca Linear &nbsp;<strong>TT</strong>=Trinca Transv. &nbsp;<strong>PO</strong>=Porosidade &nbsp;<strong>MO</strong>=Mordedura &nbsp;<strong>OV</strong>=Overlap &nbsp;<strong>FF</strong>=Falta Fus\u00e3o &nbsp;<strong>FP</strong>=Falta Penetra\u00e7\u00e3o' +
+    '</td></tr>' +
+    '</table>' +
+    // 12. Observacoes
+    '<table style="border-top:none">' +
+    '<tr><td colspan="4" class="sec">Observa\u00e7\u00f5es / Remarks</td></tr>' +
+    '<tr><td colspan="4" style="min-height:48px"><div class="val">' + (v(i.specs) || '&nbsp;') + '</div></td></tr>' +
+    gallerySection +
+    // 14. Assinaturas
+    '<tr><td colspan="4" class="sec">Aprova\u00e7\u00e3o / Approval</td></tr>' +
+    '</table>' +
+    '<table class="sig">' +
+    '<tr>' +
+    '<td style="width:25%"><div class="sig-line">Elaborado por / Prepared by<br><strong>' + v(i.inspetor) + '</strong></div></td>' +
+    '<td style="width:25%"><div class="sig-line">Aprovado por / Approved by</div></td>' +
+    '<td style="width:25%"><div class="sig-line">Cliente / Representante<br>' + v(i.cliente) + '</div></td>' +
+    '<td style="width:25%"><div class="sig-line">Data / Date<br>' + dataExib + '</div></td>' +
+    '</tr>' +
+    '</table>' +
+    '
+<div id="loading-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:14px;padding:28px 40px;text-align:center;font-family:'DM Sans',sans-serif;box-shadow:0 8px 32px rgba(0,0,0,.2)">
+    <div style="width:40px;height:40px;border:3px solid #e0e0d8;border-top-color:#3d8c40;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px"></div>
+    <div style="font-size:14px;color:#555550;font-weight:500">Carregando...</div>
+  </div>
+</div>
+</body></html>';
+
+  document.getElementById('laudo-conteudo').innerHTML = html;
+  document.getElementById('laudo-overlay').style.display = 'block';
+}
+function handleFiles(files) {
+  const arr = Array.from(files).slice(0, 50 - selectedImgs.length);
+  arr.forEach(f => {
+    const r = new FileReader();
+    r.onload = e => { selectedImgs.push(e.target.result); renderPreviews(); };
+    r.readAsDataURL(f);
+  });
+}
+
+function handleDrop(e) { e.preventDefault(); handleFiles(e.dataTransfer.files); }
+
+function renderPreviews() {
+  document.getElementById('preview-grid').innerHTML = selectedImgs.map((src, i) => `
+    <div style="position:relative;display:inline-block">
+      <img src="${src}" class="preview-img">
+      <button onclick="removeImg(${i})" style="position:absolute;top:4px;right:4px;background:rgba(0,0,0,.6);color:#fff;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:10px;display:flex;align-items:center;justify-content:center;line-height:1">&#x2715;</button>
+    </div>`).join('');
+}
+
+function removeImg(i) { selectedImgs.splice(i, 1); renderPreviews(); }
+
+function adicionarLinha() {
+  const tbody = document.getElementById('resultados-tbody');
+  const tr = document.createElement('tr');
+  const inp = '<input type="text" style="width:100%;border:none;background:transparent;font-size:12px;font-family:inherit;outline:none;padding:4px">';
+  tr.innerHTML =
+    '<td>' + inp + '</td>' +
+    '<td>' + inp + '</td>' +
+    '<td>' + inp + '</td>' +
+    '<td>' + inp + '</td>' +
+    '<td>' + inp + '</td>' +
+    '<td style="text-align:center"><select style="font-size:12px;border:none;outline:none"><option value="A">A</option><option value="R">R</option><option value="REC">REC</option></select></td>' +
+    '<td style="text-align:center"><button onclick="this.closest(\'tr\').remove()" style="background:none;border:none;cursor:pointer;color:#c0392b;font-size:14px">\u2715</button></td>';
+  tbody.appendChild(tr);
+}
+
+function coletarLinhas() {
+  const rows = document.querySelectorAll('#resultados-tbody tr');
+  return Array.from(rows).map(function(tr) {
+    var ins = tr.querySelectorAll('input');
+    var sel = tr.querySelector('select');
+    return {
+      junta: ins[0] ? ins[0].value.trim() : '',
+      nind: ins[1] ? ins[1].value.trim() : '',
+      local: ins[2] ? ins[2].value.trim() : '',
+      tamanho: ins[3] ? ins[3].value.trim() : '',
+      tipo: ins[4] ? ins[4].value.trim() : '',
+      laudo: sel ? sel.value : ''
+    };
+  });
+}
+
+function g(id) { return (document.getElementById(id) || {value:''}).value.trim(); }
+
+async function salvarInspecao() {
+  const cat = document.getElementById('f-cat').value;
+  const inspetor = document.getElementById('f-inspetor').value.trim();
+  const empresa = document.getElementById('f-empresa').value.trim();
+  const desc = document.getElementById('f-desc').value.trim();
+  if (!inspetor || !empresa || !desc) { showToast('⚠ Preencha os campos obrigatórios'); return; }
+  const record = {
+    cat, inspetor, empresa, desc,
+    specs: g('f-specs'),
+    imgs: [...selectedImgs],
+    date: new Date().toISOString().split('T')[0],
+    cliente: g('f-cliente'), obra: g('f-obra'), documento: g('f-documento'),
+    revisao: g('f-revisao'), data: g('f-data'),
+    metalbase: g('f-metalbase'), metaladic: g('f-metaladic'), tratterm: g('f-tratterm'),
+    procsolda: g('f-procsolda'), condsup: g('f-condsup'),
+    pen: { nome: g('f-pen-nome'), lote: g('f-pen-lote'), tempo: g('f-pen-tempo'), metodo: g('f-pen-metodo') },
+    rem: { nome: g('f-rem-nome'), lote: g('f-rem-lote'), tempo: g('f-rem-tempo'), temp: g('f-rem-temp') },
+    rev: { nome: g('f-rev-nome'), lote: g('f-rev-lote'), tempo: g('f-rev-tempo'), limpeza: (document.getElementById('f-rev-limpeza')||{value:''}).value },
+    lux: { valor: g('f-lux-valor'), inst: g('f-lux-inst') },
+    uv: { valor: g('f-uv-valor'), inst: g('f-uv-inst') },
+    procedimento: g('f-procedimento'), norma: g('f-norma'),
+    resultados: coletarLinhas()
+  };
+  showLoading(true);
+  try {
+    const { data, error } = await sb.from('inspections').insert([inspToDb(record)]).select().single();
+    if (error) throw error;
+    inspData.unshift(inspFromDb(data));
+    showToast('Inspeção registrada com sucesso!');
+  } catch(err) {
+    console.warn('Insert falhou, salvando localmente:', err.message || err);
+    inspData.unshift({...record, id: String(Date.now())});
+    showToast('Inspeção registrada (offline)!');
+  } finally {
+    showLoading(false);
+  }
+  saveLocal(); limparForm(); nav('dashboard');
+}
+
+function limparForm() {
+  ['f-inspetor','f-empresa','f-desc','f-specs',
+   'f-cliente','f-obra','f-documento','f-revisao','f-data',
+   'f-metalbase','f-metaladic','f-tratterm','f-procsolda','f-condsup',
+   'f-pen-nome','f-pen-lote','f-pen-tempo','f-pen-metodo',
+   'f-rem-nome','f-rem-lote','f-rem-tempo','f-rem-temp',
+   'f-rev-nome','f-rev-lote','f-rev-tempo',
+   'f-lux-valor','f-lux-inst','f-uv-valor','f-uv-inst',
+   'f-procedimento','f-norma'
+  ].forEach(function(id){ var el=document.getElementById(id); if(el) el.value=''; });
+  var rl = document.getElementById('f-rev-limpeza'); if(rl) rl.value='';
+  var tb = document.getElementById('resultados-tbody');
+  if(tb) { tb.innerHTML=''; adicionarLinha(); }
+  selectedImgs = [];
+  document.getElementById('preview-grid').innerHTML = '';
+}
+(async () => { await initData(); updateDash(); adicionarLinha(); })();
+</script>
+</body>
+</html>
