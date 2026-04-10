@@ -70,12 +70,8 @@
   #toast .t-dot{width:8px;height:8px;border-radius:50%;background:var(--brand);flex-shrink:0}
 
   /* DASHBOARD CARDS */
-  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
   .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden}
-  .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-  .stat-card.crack::before{background:var(--red)}
-  .stat-card.poros::before{background:var(--amber)}
-  .stat-card.ond::before{background:var(--blue)}
   .stat-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
   .stat-icon.cr{background:#fdeaea}
   .stat-icon.po{background:#fef5e4}
@@ -251,7 +247,7 @@
     #main{margin-top:54px;min-height:calc(100vh - 54px)}
     .page{padding:20px 14px}
     .page-title{font-size:20px}
-    .stat-grid{grid-template-columns:repeat(3,1fr)}
+    .stat-grid{grid-template-columns:repeat(2,1fr)}
     .stats-row{grid-template-columns:1fr 1fr}
     .form-row{grid-template-columns:1fr}
     .form-row-3{grid-template-columns:1fr}
@@ -277,8 +273,8 @@
     .stat-icon{width:28px;height:28px;margin-bottom:8px}
     .page{padding:16px}
   }
-  @media(max-width:480px){
-    .stat-grid{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:500px){
+    .stat-grid{grid-template-columns:repeat(2,1fr)}
     .form-row-4{grid-template-columns:1fr}
     .stats-row{grid-template-columns:1fr 1fr}
     .insp-foot{flex-wrap:wrap;gap:6px}
@@ -395,32 +391,7 @@
       <div class="page-title">Dashboard de Inspeções</div>
       <div class="page-sub">Visão geral do catálogo de defeitos industriais</div>
     </div>
-    <div class="stat-grid">
-      <div class="stat-card crack">
-        <div class="stat-icon cr">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--red)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 11.5l-3-2.25L9 15.5V6h6v9.5z"/></svg>
-        </div>
-        <div class="stat-num" id="dash-trincas">0</div>
-        <div class="stat-label">Trincas</div>
-        <div class="stat-sub">inspeções registradas</div>
-      </div>
-      <div class="stat-card poros">
-        <div class="stat-icon po">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--amber)"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
-        </div>
-        <div class="stat-num" id="dash-poros">0</div>
-        <div class="stat-label">Porosidades</div>
-        <div class="stat-sub">inspeções registradas</div>
-      </div>
-      <div class="stat-card ond">
-        <div class="stat-icon on">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--blue)"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
-        </div>
-        <div class="stat-num" id="dash-ond">0</div>
-        <div class="stat-label">Ondulações</div>
-        <div class="stat-sub">inspeções registradas</div>
-      </div>
-    </div>
+    <div class="stat-grid" id="stat-grid"></div>
 
     <div id="dash-recent-wrap" style="margin-top:20px;display:none">
       <div class="section-card">
@@ -935,16 +906,32 @@ function nav(page) {
 }
 
 function updateDash() {
-  const tr = inspData.filter(i => i.cat === 'Trincas').length;
-  const po = inspData.filter(i => i.cat === 'Porosidades').length;
-  const on = inspData.filter(i => i.cat === 'Ondulações').length;
-  const tot = inspData.length;
-  document.getElementById('dash-trincas').textContent = tr;
-  document.getElementById('dash-poros').textContent = po;
-  document.getElementById('dash-ond').textContent = on;
+  const categorias = [
+    {key:'Trincas', color:'#c0392b', bg:'#fdeaea'},
+    {key:'Porosidades', color:'#d4811a', bg:'#fef5e4'},
+    {key:'Ondulações', color:'#1a6fa8', bg:'#e8f1fa'},
+    {key:'Descontinuidades em Solda', color:'#7b2d8b', bg:'#f5eafa'},
+    {key:'Defeitos de Fundição/Forjamento', color:'#b7791f', bg:'#fef9e7'},
+    {key:'Vazamentos', color:'#2980b9', bg:'#eaf4fb'},
+    {key:'Corrosão', color:'#16a085', bg:'#e8f8f5'},
+    {key:'Isento de Defeitos', color:'#3d8c40', bg:'#e8f5e9'},
+  ];
+
+  const grid = document.getElementById('stat-grid');
+  grid.innerHTML = categorias.map(c => {
+    const count = inspData.filter(i => i.cat === c.key).length;
+    return `<div class="stat-card" style="border-top:3px solid ${c.color}">
+      <div class="stat-icon" style="background:${c.bg};width:32px;height:32px;border-radius:8px;margin-bottom:10px;display:flex;align-items:center;justify-content:center">
+        <div style="width:10px;height:10px;border-radius:50%;background:${c.color}"></div>
+      </div>
+      <div class="stat-num">${count}</div>
+      <div class="stat-label" style="font-size:11px">${c.key}</div>
+      <div class="stat-sub">inspeções registradas</div>
+    </div>`;
+  }).join('');
 
   const wrap = document.getElementById('dash-recent-wrap');
-  if (tot > 0) {
+  if (inspData.length > 0) {
     wrap.style.display = 'block';
     const rec = [...inspData].reverse().slice(0, 3);
     document.getElementById('dash-recent').innerHTML = rec.map(i => cardHTML(i)).join('');
