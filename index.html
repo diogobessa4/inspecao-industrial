@@ -377,6 +377,10 @@
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
       Buscar
     </button>
+    <button class="sb-item" onclick="nav('sobre')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      Sobre o LP
+    </button>
   </nav>
   <div style="padding:8px 8px 0">
     <button onclick="signOut()" style="width:100%;padding:8px;font-size:12px;cursor:pointer;border:1px solid rgba(255,255,255,0.1);border-radius:6px;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.6)">Sair</button>
@@ -656,6 +660,46 @@
 
 </div>
 
+<!-- SOBRE O LP -->
+<div class="page" id="page-sobre">
+  <div class="page-header">
+    <div class="page-title">Ensaio por Líquido Penetrante</div>
+    <div class="page-sub">O que é e como funciona</div>
+  </div>
+  <div style="max-width:720px">
+    <div class="section-card" style="margin-bottom:20px">
+      <p style="font-size:15px;line-height:1.8;color:var(--text)">
+        O ensaio por líquido penetrante (LP) é um método de ensaio não destrutivo (END) usado para detectar descontinuidades superficiais, como trincas e poros, em materiais não porosos, ferrosos ou não ferrosos. Utiliza a ação capilar para fazer um líquido colorido ou fluorescente penetrar nas falhas, revelando-as após a aplicação de um desenvolvedor branco.
+      </p>
+    </div>
+    <div class="section-card">
+      <div class="section-title">Etapas do Processo</div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">1</div>
+          <div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Limpeza da Superfície</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">Remoção de contaminantes como óleo, graxa e tinta para garantir a penetração do líquido.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">2</div>
+          <div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Aplicação do Penetrante</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">O líquido penetrante é aplicado sobre a superfície e aguarda-se o tempo de penetração para que o líquido entre nas descontinuidades por ação capilar.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">3</div>
+          <div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Remoção do Excesso</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">O excesso de penetrante é removido da superfície com água ou removedor, sem retirar o líquido que penetrou nas falhas.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">4</div>
+          <div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Aplicação do Revelador</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">Um pó branco (revelador) é aplicado sobre a superfície, absorvendo o penetrante das descontinuidades e tornando-as visíveis como indicações coloridas ou fluorescentes.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">5</div>
+          <div><div style="font-weight:600;font-size:14px;margin-bottom:4px">Inspeção e Registro</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">As indicações são avaliadas por inspetor qualificado e registradas conforme norma aplicável (ASME, AWS, ABNT etc.).</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- MODAL -->
 <div id="modal-overlay" onclick="if(event.target===this)closeModal()">
   <div class="modal" id="modal">
@@ -897,7 +941,7 @@ function nav(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.sb-item').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
-  const map = {dashboard:0,nova:1,favoritos:2,buscar:3,trincas:99,porosidades:99,ondulacoes:99};
+  const map = {dashboard:0,nova:1,favoritos:2,buscar:3,sobre:4,trincas:99,porosidades:99,ondulacoes:99};
   if (map[page] < 10) document.querySelectorAll('.sb-item')[map[page]].classList.add('active');
   // Fecha sidebar em mobile ao navegar
   document.getElementById('sidebar').classList.remove('open');
