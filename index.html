@@ -83,10 +83,10 @@
   .sb-ver{color:rgba(255,255,255,0.25);font-size:10px;text-align:center;padding:4px}
 
   /* MAIN */
-  #main{flex:1;min-width:0;overflow-y:auto!important;overflow-x:hidden;height:100vh;display:flex;flex-direction:column}
-  .page{display:none;padding:32px 36px 60px;overflow:visible;height:auto;min-height:100%}
+  #main{flex:1 1 auto;min-width:0;min-height:0;height:100vh;max-height:100vh;overflow-y:scroll!important;overflow-x:hidden}
+  .page{display:none;padding:32px 36px 80px;height:auto;min-height:auto;overflow:visible}
   .page.active{display:block}
-  #page-sobre{overflow:visible;height:auto}
+  #page-sobre{height:auto!important;min-height:auto!important;overflow:visible!important}
   .page-header{margin-bottom:28px}
   .page-title{font-size:26px;font-weight:600;color:var(--text);letter-spacing:-.3px}
   .page-sub{color:var(--text-3);font-size:13px;margin-top:4px}
@@ -325,6 +325,8 @@
     .page-title{font-size:18px}
     .form-card{padding:14px 10px}
   }
+  /* scroll fix */
+  html{height:100%;margin:0;padding:0;overflow:hidden}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
