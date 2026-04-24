@@ -101,7 +101,7 @@
   #toast .t-dot{width:8px;height:8px;border-radius:50%;background:var(--brand);flex-shrink:0}
 
   /* DASHBOARD CARDS */
-  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
   .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden}
   .stat-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
   .stat-icon.cr{background:#fdeaea}
@@ -574,10 +574,6 @@
         <select class="form-select" id="f-cat">
           <option value="Trincas">Trincas</option>
           <option value="Porosidades">Porosidades</option>
-          <option value="Descontinuidades em Solda">Descontinuidades em Solda</option>
-          <option value="Defeitos de Fundição/Forjamento">Defeitos de Fundição/Forjamento</option>
-          <option value="Vazamentos">Vazamentos</option>
-          <option value="Corrosão">Corrosão</option>
           <option value="Isento de Defeitos">Isento de Defeitos</option>
         </select>
       </div>
@@ -682,7 +678,6 @@
         <option value="">Todas as Categorias</option>
         <option value="Trincas">Trincas</option>
         <option value="Porosidades">Porosidades</option>
-        <option value="Ondulações">Ondulações</option>
         <option value="Isento de Defeitos">Isento de Defeitos</option>
       </select>
       <button class="search-btn" onclick="buscar()">
@@ -994,11 +989,6 @@ function updateDash() {
   const categorias = [
     {key:'Trincas', color:'#c0392b', bg:'#fdeaea'},
     {key:'Porosidades', color:'#d4811a', bg:'#fef5e4'},
-    {key:'Ondulações', color:'#1a6fa8', bg:'#e8f1fa'},
-    {key:'Descontinuidades em Solda', color:'#7b2d8b', bg:'#f5eafa'},
-    {key:'Defeitos de Fundição/Forjamento', color:'#b7791f', bg:'#fef9e7'},
-    {key:'Vazamentos', color:'#2980b9', bg:'#eaf4fb'},
-    {key:'Corrosão', color:'#16a085', bg:'#e8f8f5'},
     {key:'Isento de Defeitos', color:'#3d8c40', bg:'#e8f5e9'},
   ];
 
