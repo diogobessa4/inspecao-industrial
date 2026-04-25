@@ -86,6 +86,21 @@
   #main{flex:1 1 auto;min-width:0;min-height:0;height:100vh;max-height:100vh;overflow-y:scroll!important;overflow-x:hidden}
   .page{display:none;padding:32px 36px 80px;flex:1;min-width:0;height:100vh;max-height:100vh;overflow-y:auto;overflow-x:hidden}
   .page.active{display:block}
+  /* TOC LAYOUT */
+  .page-layout{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;padding:32px 36px 60px}
+  .page{padding:0;scroll-behavior:smooth}
+  .page-content{min-width:0}
+  .page-toc{position:sticky;top:24px;max-height:calc(100vh - 48px);overflow-y:auto;padding-right:8px;border-right:1px solid var(--border)}
+  .toc-title{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--green);margin-bottom:16px;text-transform:uppercase}
+  .toc-nav{display:flex;flex-direction:column;gap:2px}
+  .toc-nav a{display:block;padding:8px 12px;font-size:14px;color:var(--text-2);text-decoration:none;border-left:2px solid transparent;border-radius:0 4px 4px 0;transition:all 0.15s ease;line-height:1.4}
+  .toc-nav a:hover{color:var(--text);background:rgba(192,57,43,0.06)}
+  .toc-nav a.active{color:var(--green);border-left-color:var(--green);background:rgba(192,57,43,0.08);font-weight:600}
+  .toc-nav a.toc-sub{padding-left:24px;font-size:13px;color:var(--text-3)}
+  .toc-nav a.toc-sub.active{color:var(--green)}
+  .page-content [id]{scroll-margin-top:24px}
+  @media(max-width:900px){.page-layout{grid-template-columns:1fr;gap:0;padding:20px 14px 40px}.page-toc{display:none}}
+  /* END TOC LAYOUT */
   .page-header{margin-bottom:28px}
   .page-title{font-size:26px;font-weight:600;color:var(--text);letter-spacing:-.3px}
   .page-sub{color:var(--text-3);font-size:13px;margin-top:4px}
@@ -718,12 +733,26 @@
 
 <!-- SOBRE O LP -->
 <div class="page" id="page-sobre">
-  <div class="page-header">
-    <div class="page-title">Ensaio por Líquido Penetrante</div>
-    <div class="page-sub">O que é e como funciona</div>
-  </div>
-  <div style="max-width:900px;margin:0 auto;display:block">
-    <div class="section-card" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:32px;margin-bottom:20px">
+  <div class="page-layout">
+    <aside class="page-toc">
+      <div class="toc-title">NESTA PÁGINA</div>
+      <nav class="toc-nav">
+        <a href="#sec-definicao">Definição</a>
+        <a href="#sec-etapas">Etapas do Processo</a>
+        <a href="#sec-etapa-1" class="toc-sub">1. Limpeza da Superfície</a>
+        <a href="#sec-etapa-2" class="toc-sub">2. Luxímetro</a>
+        <a href="#sec-etapa-3" class="toc-sub">3. Aplicação do Penetrante</a>
+        <a href="#sec-etapa-4" class="toc-sub">4. Remoção do LP</a>
+        <a href="#sec-etapa-5" class="toc-sub">5. Aplicação do Revelador</a>
+        <a href="#sec-etapa-6" class="toc-sub">6. Inspeção e Registro</a>
+      </nav>
+    </aside>
+    <div class="page-content">
+      <div class="page-header">
+        <div class="page-title">Ensaio por Líquido Penetrante</div>
+        <div class="page-sub">O que é e como funciona</div>
+      </div>
+      <div id="sec-definicao" class="section-card" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:32px;margin-bottom:20px">
       <div>
         <div style="font-size:13px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Definição</div>
         <p style="font-size:14px;line-height:1.7;color:var(--text);margin:0">O ensaio por líquido penetrante (LP) é um método de ensaio não destrutivo (END) usado para detectar descontinuidades superficiais, como trincas e poros, em materiais não porosos, ferrosos ou não ferrosos. Utiliza a ação capilar para fazer um líquido colorido ou fluorescente penetrar nas falhas, revelando-as após a aplicação de um desenvolvedor branco.</p>
@@ -733,10 +762,10 @@
         <div style="font-size:11px;color:var(--text-3);text-align:center;font-style:italic">Aplicação de penetrante vermelho em junta soldada</div>
       </div>
     </div>
-    <div class="section-card" style="margin-bottom:20px">
+    <div id="sec-etapas" class="section-card" style="margin-bottom:20px">
       <div class="section-title">Etapas do Processo</div>
       <div style="display:flex;flex-direction:column">
-        <div style="padding:20px 0;border-bottom:1px solid var(--border)">
+        <div id="sec-etapa-1" style="padding:20px 0;border-bottom:1px solid var(--border)">
           <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px">
             <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">1</div>
             <div><div style="font-weight:600;font-size:16px;margin-bottom:6px">Limpeza da Superfície</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">Remoção de contaminantes como óleo, graxa e tinta para garantir a penetração do líquido.</div></div>
@@ -746,7 +775,7 @@
             <p style="font-size:13px;line-height:1.7;color:var(--text)">A limpeza da superfície é a etapa mais crítica no ensaio por Líquido Penetrante (LP), pois contaminações podem obstruir as descontinuidades, impedindo a entrada do penetrante e falseando o resultado. Ela deve garantir a remoção de óleos, graxas, tintas, óxidos, areia e poeira.</p>
           </div>
         </div>
-        <div style="padding:20px 0;border-bottom:1px solid var(--border)">
+        <div id="sec-etapa-2" style="padding:20px 0;border-bottom:1px solid var(--border)">
           <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px">
             <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">2</div>
             <div><div style="font-weight:600;font-size:16px;margin-bottom:6px">Luxímetro</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">Verificação da intensidade de iluminação na área do ensaio</div></div>
@@ -756,7 +785,7 @@
             <p style="font-size:13px;line-height:1.7;color:var(--text)">Utiliza-se um luxímetro calibrado para medir a intensidade, a norma geralmente exige uma luminosidade mínima de 1000 lux (ou 100 fc) na superfície da peça. A verificação da luminosidade no ensaio por líquido penetrante (LP) é uma etapa crítica para garantir a sensibilidade e a validade do teste, com requisitos diferentes para métodos visíveis e fluorescentes.</p>
           </div>
         </div>
-        <div style="padding:20px 0;border-bottom:1px solid var(--border)">
+        <div id="sec-etapa-3" style="padding:20px 0;border-bottom:1px solid var(--border)">
           <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px">
             <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">3</div>
             <div><div style="font-weight:600;font-size:16px;margin-bottom:6px">Aplicação do Penetrante</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">O líquido penetrante é aplicado sobre a superfície e aguarda-se o tempo de penetração para que o líquido entre nas descontinuidades por ação capilar.</div></div>
@@ -766,7 +795,7 @@
             <p style="font-size:13px;line-height:1.7;color:var(--text)">A aplicação do líquido penetrante no ensaio de LP consiste em cobrir a superfície limpa e seca da peça com um líquido colorido (geralmente vermelho) ou fluorescente para detectar descontinuidades superficiais.</p>
           </div>
         </div>
-        <div style="padding:20px 0;border-bottom:1px solid var(--border)">
+        <div id="sec-etapa-4" style="padding:20px 0;border-bottom:1px solid var(--border)">
           <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px">
             <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">4</div>
             <div><div style="font-weight:600;font-size:16px;margin-bottom:6px">Remoção do LP</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">O excesso de penetrante é removido da superfície com água ou removedor, sem retirar o líquido que penetrou nas falhas.</div></div>
@@ -782,7 +811,7 @@
             </ul>
           </div>
         </div>
-        <div style="padding:20px 0;border-bottom:1px solid var(--border)">
+        <div id="sec-etapa-5" style="padding:20px 0;border-bottom:1px solid var(--border)">
           <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px">
             <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">5</div>
             <div><div style="font-weight:600;font-size:16px;margin-bottom:6px">Aplicação do Revelador</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">Um pó branco (revelador) é aplicado sobre a superfície, absorvendo o penetrante das descontinuidades e tornando-as visíveis.</div></div>
@@ -793,7 +822,7 @@
             <p style="font-size:13px;line-height:1.7;color:var(--text);margin-top:10px"><strong>Tempo de Revelação:</strong> Após a aplicação, aguarde de 10 a 60 minutos (normalmente 10-30 min) para que o penetrante seja extraído. Deve ser aplicado após a secagem da superfície, idealmente no máximo 30 minutos após a remoção do excesso.</p>
           </div>
         </div>
-        <div style="padding:20px 0">
+        <div id="sec-etapa-6" style="padding:20px 0">
           <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px">
             <div style="min-width:36px;height:36px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--green);font-size:14px">6</div>
             <div><div style="font-weight:600;font-size:16px;margin-bottom:6px">Inspeção e Registro</div><div style="font-size:13px;color:var(--text-2);line-height:1.6">As indicações são avaliadas por inspetor qualificado e registradas conforme norma aplicável (ASME, AWS, ABNT etc.).</div></div>
@@ -814,35 +843,48 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </div>
 
 <div class="page" id="page-identificar">
-  <div class="page-header">
-    <div class="page-title">Como Identificar Defeitos</div>
-    <div class="page-sub">Guia visual de identificação de trincas e porosidades</div>
-  </div>
-  <div style="max-width:900px;margin:0 auto;display:block">
+  <div class="page-layout">
+    <aside class="page-toc">
+      <div class="toc-title">NESTA PÁGINA</div>
+      <nav class="toc-nav">
+        <a href="#sec-trinca">Trinca</a>
+        <a href="#sec-trinca-quente" class="toc-sub">Trinca a Quente</a>
+        <a href="#sec-trinca-frio" class="toc-sub">Trinca a Frio</a>
+        <a href="#sec-trinca-cratera" class="toc-sub">Trinca de Cratera</a>
+        <a href="#sec-trinca-liquacao" class="toc-sub">Trinca de Liquação</a>
+        <a href="#sec-porosidade">Porosidade</a>
+      </nav>
+    </aside>
+    <div class="page-content">
+      <div class="page-header">
+        <div class="page-title">Como Identificar Defeitos</div>
+        <div class="page-sub">Guia visual de identificação de trincas e porosidades</div>
+      </div>
 
     <!-- TRINCA -->
-    <div class="section-card" style="margin-bottom:20px">
+    <div id="sec-trinca" class="section-card" style="margin-bottom:20px">
       <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--green)">Trinca</div>
       <p style="font-size:13px;line-height:1.7;color:var(--text);margin-bottom:16px">Identificar trincas pelo ensaio de Líquido Penetrante (LP) consiste em observar manchas vermelhas intensas sobre um fundo branco revelador, indicando descontinuidades superficiais por capilaridade. As trincas aparecem como linhas finas, contínuas ou descontínuas (pontilhadas), que se destacam após a aplicação e secagem do revelador branco sobre a superfície limpa.</p>
       <div style="font-size:14px;font-weight:600;color:var(--green);margin:16px 0 12px;text-transform:uppercase;letter-spacing:.4px">Tipos de Trinca</div>
       <div style="display:flex;flex-direction:column;gap:14px">
-        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
+        <div id="sec-trinca-quente" style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
           <div style="font-weight:600;font-size:14px;margin-bottom:8px">Trinca a Quente (Solidificação)</div>
           <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante a solidificação da poça de fusão (ainda em temperaturas altíssimas).<br><b>Onde fica:</b> Geralmente no centro do cordão de solda (sentido longitudinal).<br><b>Aparência:</b> Costuma ser aberta e "azulada" ou oxidada por dentro, pois o metal estava exposto ao ar enquanto ainda estava quente.<br><b>Causa:</b> Falta de metal líquido para preencher os espaços entre os grãos que estão se solidificando, geralmente por causa de impurezas (como enxofre) ou design de junta muito rígido.</div>
         </div>
-        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
+        <div id="sec-trinca-frio" style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
           <div style="font-weight:600;font-size:14px;margin-bottom:8px">Trinca a Frio (Induzida por Hidrogênio)</div>
           <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Horas ou até dias após a soldagem (conhecida como "trinca atrasada"), geralmente abaixo de 150°C.<br><b>Onde fica:</b> Quase sempre na Zona Afetada pelo Calor (ZAC), logo ao lado do cordão, ou na raiz.<br><b>Aparência:</b> São trincas finas, "limpas" (não oxidadas) e muitas vezes subsuperficiais (difíceis de ver a olho nu).<br><b>Causa:</b> Presença de hidrogênio, estrutura frágil (martensita) e tensões residuais.</div>
         </div>
-        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
+        <div id="sec-trinca-cratera" style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
           <div style="font-weight:600;font-size:14px;margin-bottom:8px">Trinca de Cratera</div>
           <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante a solidificação final do metal de solda (é um tipo de trinca a quente que acontece de forma imediata).<br><b>Onde fica:</b> No ponto exato de interrupção do arco, especificamente na depressão (cratera) deixada no final do cordão.<br><b>Aparência:</b> Frequentemente apresenta um formato radial, assemelhando-se a uma estrela, "Y" ou "X", partindo do centro da cratera.<br><b>Causa:</b> Interrupção brusca do arco sem o devido preenchimento do volume final, resultando em contração excessiva do metal enquanto ele ainda está frágil (quente).</div>
         </div>
-        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
+        <div id="sec-trinca-liquacao" style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
           <div style="font-weight:600;font-size:14px;margin-bottom:8px">Trinca de Liquação</div>
           <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante o processo de soldagem, na zona que atinge temperaturas próximas à fusão (região subsolidus).<br><b>Onde fica:</b> Localizada na Zona Afetada pelo Calor (ZAC), bem próxima à linha de fusão, ou entre os passes em soldas de múltiplas camadas.<br><b>Aparência:</b> Geralmente são microtrincas que seguem o contorno dos grãos do metal base que "derreteram" levemente.<br><b>Causa:</b> Aquecimento excessivo que causa a fusão de constituintes de baixo ponto de fusão nos contornos de grão. Quando a solda resfria e contrai, esses pontos ainda líquidos não aguentam a tensão e se separam.</div>
         </div>
@@ -850,7 +892,7 @@
     </div>
 
     <!-- POROSIDADE -->
-    <div class="section-card" style="margin-bottom:20px">
+    <div id="sec-porosidade" class="section-card" style="margin-bottom:20px">
       <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--amber)">Porosidade</div>
       <p style="font-size:13px;line-height:1.7;color:var(--text);margin-bottom:16px">A porosidade no ensaio de líquido penetrante (LP) é identificada pela presença de indicações arredondadas (pontos ou pequenas áreas locais de cor) após a aplicação do revelador. Estas indicações ocorrem quando o penetrante, que entrou em cavidades superficiais, é extraído pelo revelador, criando um contraste com o fundo.</p>
       <div style="font-size:14px;font-weight:600;color:var(--amber);margin:16px 0 12px;text-transform:uppercase;letter-spacing:.4px">Tipos de Porosidade</div>
@@ -873,7 +915,7 @@
         </div>
       </div>
     </div>
-
+    </div>
   </div>
 </div>
 
@@ -1223,6 +1265,40 @@ function toggleSidebar() {
   ov.classList.toggle('open');
 }
 
+const _spyInit = {};
+function initScrollSpy(pageId) {
+  if (_spyInit[pageId]) return;
+  _spyInit[pageId] = true;
+  const page = document.getElementById(pageId);
+  if (!page) return;
+  const tocLinks = page.querySelectorAll('.toc-nav a');
+  const sections = Array.from(tocLinks).map(a => {
+    const id = a.getAttribute('href').substring(1);
+    return document.getElementById(id);
+  }).filter(Boolean);
+  tocLinks.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById(a.getAttribute('href').substring(1));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        const link = page.querySelector(`.toc-nav a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  sections.forEach(s => obs.observe(s));
+}
+document.addEventListener('DOMContentLoaded', () => {
+  initScrollSpy('page-sobre');
+  initScrollSpy('page-identificar');
+});
+
 function nav(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.sb-item').forEach(b => b.classList.remove('active'));
@@ -1239,6 +1315,8 @@ function nav(page) {
   if (page === 'ondulacoes') renderList('ondulacoes');
   if (page === 'favoritos') renderFavs();
   if (page === 'buscar') { document.getElementById('search-results').innerHTML = ''; document.getElementById('search-q').value = ''; }
+  if (page === 'sobre') initScrollSpy('page-sobre');
+  if (page === 'identificar') initScrollSpy('page-identificar');
 }
 
 function updateDash() {
