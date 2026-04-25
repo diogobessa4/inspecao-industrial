@@ -1266,8 +1266,14 @@ function showToast(msg) {
 function toggleSidebar() {
   const sb = document.getElementById('sidebar');
   const ov = document.getElementById('sidebar-overlay');
-  sb.classList.toggle('open');
-  ov.classList.toggle('open');
+  if (window.innerWidth <= 768) {
+    sb.classList.toggle('open');
+    if (ov) ov.classList.toggle('open');
+  } else {
+    const btn = document.getElementById('toggle-btn');
+    sb.classList.toggle('collapsed');
+    if (btn) btn.innerHTML = sb.classList.contains('collapsed') ? '&#8250;' : '&#8249;';
+  }
 }
 
 const _spyInit = {};
@@ -1843,12 +1849,6 @@ function limparForm() {
 }
 checkAuth();
 
-function toggleSidebar(){
-  const sb = document.getElementById('sidebar');
-  const btn = document.getElementById('toggle-btn');
-  sb.classList.toggle('collapsed');
-  btn.innerHTML = sb.classList.contains('collapsed') ? '&#8250;' : '&#8249;';
-}
 </script>
 <div id="loading-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;align-items:center;justify-content:center">
   <div style="background:#fff;border-radius:14px;padding:28px 40px;text-align:center;font-family:'DM Sans',sans-serif;box-shadow:0 8px 32px rgba(0,0,0,.2)">
