@@ -1153,7 +1153,7 @@ function loadLocal() {
 
 async function normalizarLaudo(arr){ return arr.map(i => ({...i, laudo: i.laudo === 'REC' ? 'REV' : (i.laudo||'')})); }
 
-function initData() {
+async function initData() {
   showLoading(true);
   try {
     const [r1, r2] = await Promise.all([
