@@ -924,7 +924,7 @@
       <div id="f-laudo-checks">
         <label class="filtro-label"><input type="checkbox" value="A"> Aprovado (A)</label>
         <label class="filtro-label"><input type="checkbox" value="R"> Reprovado (R)</label>
-        <label class="filtro-label"><input type="checkbox" value="REC"> Recomenda&#231;&#227;o (REC)</label>
+        <label class="filtro-label"><input type="checkbox" value="REV"> Revis&#227;o (REV)</label>
       </div>
     </div>
   </div>
@@ -1151,7 +1151,9 @@ function loadLocal() {
   try { favData = JSON.parse(localStorage.getItem('defect_favorites') || '[]'); } catch(e) { favData = []; }
 }
 
-async function initData() {
+async function normalizarLaudo(arr){ return arr.map(i => ({...i, laudo: i.laudo === 'REC' ? 'REV' : (i.laudo||'')})); }
+
+function initData() {
   showLoading(true);
   try {
     const [r1, r2] = await Promise.all([
@@ -1622,7 +1624,7 @@ function gerarLaudo(id) {
     resultRows +
     // 11. Legenda
     '<tr><td colspan="6" style="font-size:8px;padding:4px 6px;background:#f5f5f5">' +
-    '<strong>Legenda:</strong>&nbsp; <strong>A</strong>=Aprovado/Accepted &nbsp;<strong>R</strong>=Reprovado/Rejected &nbsp;<strong>REC</strong>=Recomenda\u00e7\u00e3o &nbsp;&nbsp;' +
+    '<strong>Legenda:</strong>&nbsp; <strong>A</strong>=Aprovado/Accepted &nbsp;<strong>R</strong>=Reprovado/Rejected &nbsp;<strong>REV</strong>=Revisão &nbsp;&nbsp;' +
     '<strong>TL</strong>=Trinca Linear &nbsp;<strong>TT</strong>=Trinca Transv. &nbsp;<strong>PO</strong>=Porosidade &nbsp;<strong>MO</strong>=Mordedura &nbsp;<strong>OV</strong>=Overlap &nbsp;<strong>FF</strong>=Falta Fus\u00e3o &nbsp;<strong>FP</strong>=Falta Penetra\u00e7\u00e3o' +
     '</td></tr>' +
     '</table>' +
@@ -1678,7 +1680,7 @@ function adicionarLinha() {
     '<td style="border:1px solid var(--border)">' + inp + '</td>' +
     '<td style="border:1px solid var(--border)">' + inp + '</td>' +
     '<td style="border:1px solid var(--border)">' + inp + '</td>' +
-    '<td style="border:1px solid var(--border);text-align:center"><select style="font-size:12px;border:none;outline:none"><option value="A">A</option><option value="R">R</option><option value="REC">REC</option></select></td>' +
+    '<td style="border:1px solid var(--border);text-align:center"><select style="font-size:12px;border:none;outline:none"><option value="A">A</option><option value="R">R</option><option value="REV">REV</option></select></td>' +
     '<td style="border:1px solid var(--border);text-align:center"><button onclick="this.closest(\'tr\').remove()" style="min-width:28px;min-height:28px;flex-shrink:0;cursor:pointer;color:var(--red);background:none;border:none;font-size:16px;padding:0 4px">\u2715</button></td>';
   tbody.appendChild(tr);
   if (window.innerWidth < 600) document.getElementById('tabela-hint').style.display = 'block';
