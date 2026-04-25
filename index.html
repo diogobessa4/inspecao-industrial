@@ -330,6 +330,23 @@
 }
   /* scroll fix */
   html{height:100%;margin:0;padding:0;overflow:hidden}
+  /* FILTER PANEL */
+  .filtro-label{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:13px;color:var(--text);cursor:pointer;user-select:none}
+  .filtro-label input{width:16px;height:16px;accent-color:var(--green);cursor:pointer;flex-shrink:0}
+  .filtro-input{width:100%;border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:var(--font);background:var(--surface);color:var(--text);outline:none;box-sizing:border-box}
+  .filtro-input:focus{border-color:var(--green)}
+  .filtro-select{width:100%;border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;font-family:var(--font);background:var(--surface);color:var(--text);outline:none;cursor:pointer}
+  .filtro-badge{background:var(--green);color:#fff;border-radius:10px;font-size:10px;font-weight:700;padding:2px 6px;margin-left:6px;display:inline-block}
+  .filtro-toggle-wrap{display:flex;align-items:center;justify-content:space-between;padding:4px 0}
+  .filtro-toggle{position:relative;width:44px;height:24px;cursor:pointer}
+  .filtro-toggle input{opacity:0;width:0;height:0}
+  .filtro-toggle-track{position:absolute;inset:0;background:var(--border);border-radius:12px;transition:.2s}
+  .filtro-toggle input:checked + .filtro-toggle-track{background:var(--green)}
+  .filtro-toggle-track::before{content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;left:3px;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+  .filtro-toggle input:checked + .filtro-toggle-track::before{left:23px}
+  #btn-filtros{display:flex;align-items:center;gap:6px;padding:11px 16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;font-size:13px;font-weight:600;color:var(--text);cursor:pointer;font-family:var(--font);white-space:nowrap}
+  #btn-filtros:hover{border-color:var(--green);color:var(--green)}
+  @media(max-width:500px){#filtros-panel{width:100%!important;right:-100%!important}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -686,18 +703,17 @@
     </div>
     <div class="search-bar">
       <input class="search-input" id="search-q" placeholder="Digite sua busca..." type="text" onkeydown="if(event.key==='Enter')buscar()">
-      <select class="search-cat" id="search-cat">
-        <option value="">Todas as Categorias</option>
-        <option value="Trincas">Trincas</option>
-        <option value="Porosidades">Porosidades</option>
-        <option value="Isento de Defeitos">Isento de Defeitos</option>
-      </select>
+      <button id="btn-filtros" onclick="abrirFiltros()">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39A.998.998 0 0 0 18.95 4H5.04a1 1 0 0 0-.79 1.61z"/></svg>
+        Filtros
+      </button>
       <button class="search-btn" onclick="buscar()">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
         Buscar
       </button>
     </div>
     <div id="search-results"></div>
+  </div>
   </div>
 
 
@@ -861,6 +877,114 @@
 
   </div>
 </div>
+
+<!-- FILTROS -->
+<div id="filtros-panel" style="position:fixed;top:0;right:-380px;width:380px;height:100vh;background:#fff;box-shadow:-4px 0 20px rgba(0,0,0,.15);z-index:500;transition:right 0.3s ease;overflow-y:auto;display:flex;flex-direction:column">
+  <div style="padding:20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;position:sticky;top:0;background:#fff;z-index:2">
+    <button onclick="fecharFiltros()" style="background:none;border:none;cursor:pointer;padding:4px;color:var(--text);display:flex;align-items:center">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z"/></svg>
+    </button>
+    <div style="font-weight:700;letter-spacing:.5px;font-size:14px;color:var(--text)">FILTROS</div>
+    <button onclick="limparFiltros()" style="margin-left:auto;background:none;border:none;color:var(--green);font-size:12px;cursor:pointer;font-weight:600;font-family:var(--font)">Limpar tudo</button>
+  </div>
+  <div style="flex:1;padding:0">
+  <div class="filtro-secao" style="border-bottom:1px solid var(--border)">
+    <button onclick="toggleSecao(this)" style="width:100%;padding:18px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-weight:700;font-size:12px;letter-spacing:.5px;color:var(--text);font-family:var(--font)">
+      ORDENAR POR
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;transition:transform .2s;flex-shrink:0"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+    </button>
+    <div class="filtro-conteudo" style="display:none;padding:0 20px 18px">
+      <select class="filtro-select" id="f-ordenar">
+        <option value="recentes">Mais Recentes</option>
+        <option value="antigas">Mais Antigas</option>
+        <option value="az-empresa">A-Z Empresa</option>
+        <option value="az-inspetor">A-Z Inspetor</option>
+      </select>
+    </div>
+  </div>
+  <div class="filtro-secao" style="border-bottom:1px solid var(--border)">
+    <button onclick="toggleSecao(this)" style="width:100%;padding:18px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-weight:700;font-size:12px;letter-spacing:.5px;color:var(--text);font-family:var(--font)">
+      CATEGORIA
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;transition:transform .2s;flex-shrink:0"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+    </button>
+    <div class="filtro-conteudo" style="display:none;padding:0 20px 18px">
+      <div id="f-cat-checks">
+        <label class="filtro-label"><input type="checkbox" value="Trincas"> Trincas</label>
+        <label class="filtro-label"><input type="checkbox" value="Porosidades"> Porosidades</label>
+        <label class="filtro-label"><input type="checkbox" value="Isento de Defeitos"> Isento de Defeitos</label>
+      </div>
+    </div>
+  </div>
+  <div class="filtro-secao" style="border-bottom:1px solid var(--border)">
+    <button onclick="toggleSecao(this)" style="width:100%;padding:18px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-weight:700;font-size:12px;letter-spacing:.5px;color:var(--text);font-family:var(--font)">
+      LAUDO
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;transition:transform .2s;flex-shrink:0"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+    </button>
+    <div class="filtro-conteudo" style="display:none;padding:0 20px 18px">
+      <div id="f-laudo-checks">
+        <label class="filtro-label"><input type="checkbox" value="A"> Aprovado (A)</label>
+        <label class="filtro-label"><input type="checkbox" value="R"> Reprovado (R)</label>
+        <label class="filtro-label"><input type="checkbox" value="REC"> Recomenda&#231;&#227;o (REC)</label>
+      </div>
+    </div>
+  </div>
+  <div class="filtro-secao" style="border-bottom:1px solid var(--border)">
+    <button onclick="toggleSecao(this)" style="width:100%;padding:18px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-weight:700;font-size:12px;letter-spacing:.5px;color:var(--text);font-family:var(--font)">
+      EMPRESA
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;transition:transform .2s;flex-shrink:0"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+    </button>
+    <div class="filtro-conteudo" style="display:none;padding:0 20px 18px">
+      <input class="filtro-input" type="text" id="f-empresa-filter" placeholder="Nome da empresa...">
+    </div>
+  </div>
+  <div class="filtro-secao" style="border-bottom:1px solid var(--border)">
+    <button onclick="toggleSecao(this)" style="width:100%;padding:18px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-weight:700;font-size:12px;letter-spacing:.5px;color:var(--text);font-family:var(--font)">
+      INSPETOR
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;transition:transform .2s;flex-shrink:0"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+    </button>
+    <div class="filtro-conteudo" style="display:none;padding:0 20px 18px">
+      <input class="filtro-input" type="text" id="f-inspetor-filter" placeholder="Nome do inspetor...">
+    </div>
+  </div>
+  <div class="filtro-secao" style="border-bottom:1px solid var(--border)">
+    <button onclick="toggleSecao(this)" style="width:100%;padding:18px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-weight:700;font-size:12px;letter-spacing:.5px;color:var(--text);font-family:var(--font)">
+      PER&#205;ODO
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;transition:transform .2s;flex-shrink:0"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+    </button>
+    <div class="filtro-conteudo" style="display:none;padding:0 20px 18px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div>
+          <div style="font-size:11px;color:var(--text-3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.4px">De</div>
+          <input class="filtro-input" type="date" id="f-dt-ini">
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--text-3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.4px">At&#233;</div>
+          <input class="filtro-input" type="date" id="f-dt-fim">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filtro-secao" style="border-bottom:1px solid var(--border)">
+    <button onclick="toggleSecao(this)" style="width:100%;padding:18px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-weight:700;font-size:12px;letter-spacing:.5px;color:var(--text);font-family:var(--font)">
+      APENAS FAVORITAS
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;transition:transform .2s;flex-shrink:0"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+    </button>
+    <div class="filtro-conteudo" style="display:none;padding:0 20px 18px">
+      <div class="filtro-toggle-wrap">
+        <span style="font-size:13px;color:var(--text)">Mostrar apenas favoritas</span>
+        <label class="filtro-toggle">
+          <input type="checkbox" id="f-apenas-fav">
+          <span class="filtro-toggle-track"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div style="padding:16px 20px;border-top:1px solid var(--border);position:sticky;bottom:0;background:#fff">
+    <button onclick="aplicarFiltros()" class="btn btn-primary" style="width:100%;padding:12px">Aplicar Filtros</button>
+  </div>
+</div>
+<div id="filtros-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:499" onclick="fecharFiltros()"></div>
 <!-- MODAL -->
 <div id="modal-overlay" onclick="if(event.target===this)closeModal()">
   <div class="modal" id="modal">
@@ -1259,21 +1383,68 @@ async function removeFav(inspId, imgIdx) {
   saveLocal(); renderFavs(); showToast('Removido dos favoritos');
 }
 
-function buscar() {
+function abrirFiltros(){
+  document.getElementById('filtros-panel').style.right = '0';
+  document.getElementById('filtros-overlay').style.display = 'block';
+}
+
+function fecharFiltros(){
+  document.getElementById('filtros-panel').style.right = '-380px';
+  document.getElementById('filtros-overlay').style.display = 'none';
+}
+
+function toggleSecao(btn){
+  const c = btn.nextElementSibling;
+  const icon = btn.querySelector('svg');
+  const open = c.style.display === 'block';
+  c.style.display = open ? 'none' : 'block';
+  icon.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+}
+
+function limparFiltros(){
+  document.querySelectorAll('#filtros-panel input[type="checkbox"]').forEach(i => i.checked = false);
+  document.querySelectorAll('#filtros-panel input[type="text"], #filtros-panel input[type="date"]').forEach(i => i.value = '');
+  document.getElementById('f-ordenar').value = 'recentes';
+}
+
+function aplicarFiltros(){
   const q = document.getElementById('search-q').value.toLowerCase().trim();
-  const cat = document.getElementById('search-cat').value;
-  const res = inspData.filter(i => {
-    const matchCat = !cat || i.cat === cat;
-    const matchQ = !q || (i.desc.toLowerCase().includes(q) || i.inspetor.toLowerCase().includes(q) || i.empresa.toLowerCase().includes(q));
-    return matchCat && matchQ;
+  const catChecks = [...document.querySelectorAll('#f-cat-checks input:checked')].map(i => i.value);
+  const laudoChecks = [...document.querySelectorAll('#f-laudo-checks input:checked')].map(i => i.value);
+  const empresa = document.getElementById('f-empresa-filter').value.toLowerCase().trim();
+  const inspetor = document.getElementById('f-inspetor-filter').value.toLowerCase().trim();
+  const dtIni = document.getElementById('f-dt-ini').value;
+  const dtFim = document.getElementById('f-dt-fim').value;
+  const apenasFav = document.getElementById('f-apenas-fav').checked;
+  const ordenar = document.getElementById('f-ordenar').value;
+
+  let res = inspData.filter(i => {
+    if (q && !i.desc.toLowerCase().includes(q) && !i.inspetor.toLowerCase().includes(q) && !i.empresa.toLowerCase().includes(q)) return false;
+    if (catChecks.length && !catChecks.includes(i.cat)) return false;
+    if (laudoChecks.length && !laudoChecks.includes(i.laudo || '')) return false;
+    if (empresa && !i.empresa.toLowerCase().includes(empresa)) return false;
+    if (inspetor && !i.inspetor.toLowerCase().includes(inspetor)) return false;
+    if (dtIni && i.date < dtIni) return false;
+    if (dtFim && i.date > dtFim) return false;
+    if (apenasFav && !favData.some(f => f.inspId === i.id)) return false;
+    return true;
   });
+
+  if (ordenar === 'recentes') res.sort((a,b) => b.date.localeCompare(a.date));
+  else if (ordenar === 'antigas') res.sort((a,b) => a.date.localeCompare(b.date));
+  else if (ordenar === 'az-empresa') res.sort((a,b) => a.empresa.localeCompare(b.empresa));
+  else if (ordenar === 'az-inspetor') res.sort((a,b) => a.inspetor.localeCompare(b.inspetor));
+
   const cont = document.getElementById('search-results');
   if (res.length === 0) {
-    cont.innerHTML = `<div class="empty-state"><div class="empty-text">Nenhuma inspeção encontrada para esta busca</div></div>`;
+    cont.innerHTML = `<div class="empty-state"><div class="empty-text">Nenhuma inspe&#231;&#227;o encontrada para esta busca</div></div>`;
   } else {
     cont.innerHTML = `<div style="font-size:12px;color:var(--text-3);margin-bottom:12px">${res.length} resultado${res.length !== 1 ? 's' : ''} encontrado${res.length !== 1 ? 's' : ''}</div><div class="insp-grid">${res.map(i => cardHTML(i)).join('')}</div>`;
   }
+  fecharFiltros();
 }
+
+function buscar(){ aplicarFiltros(); } r
 
 function openModal(id) {
   const insp = inspData.find(i => i.id === id);
