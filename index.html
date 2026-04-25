@@ -405,6 +405,10 @@
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
       <span class="sb-item-text">Sobre o LP</span>
     </button>
+    <button class="sb-item" data-label="Como identificar defeitos" onclick="nav('identificar')">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;flex-shrink:0;opacity:.8"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <span class="sb-item-text">Como identificar defeitos</span>
+    </button>
     <button class="sb-item active" data-label="Dashboard" onclick="nav('dashboard')">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 5h2v-2h2v-2h-2v-2h-2v2h-2v2h2z"/></svg>
       <span class="sb-item-text">Dashboard</span>
@@ -798,6 +802,65 @@
   </div>
 </div>
 
+<div class="page" id="page-identificar">
+  <div class="page-header">
+    <div class="page-title">Como Identificar Defeitos</div>
+    <div class="page-sub">Guia visual de identificação de trincas e porosidades</div>
+  </div>
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:20px">
+
+    <!-- TRINCA -->
+    <div class="section-card">
+      <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--green)">Trinca</div>
+      <p style="font-size:13px;line-height:1.7;color:var(--text);margin-bottom:16px">Identificar trincas pelo ensaio de Líquido Penetrante (LP) consiste em observar manchas vermelhas intensas sobre um fundo branco revelador, indicando descontinuidades superficiais por capilaridade. As trincas aparecem como linhas finas, contínuas ou descontínuas (pontilhadas), que se destacam após a aplicação e secagem do revelador branco sobre a superfície limpa.</p>
+      <div style="font-size:14px;font-weight:600;color:var(--green);margin:16px 0 12px;text-transform:uppercase;letter-spacing:.4px">Tipos de Trinca</div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
+          <div style="font-weight:600;font-size:14px;margin-bottom:8px">Trinca a Quente (Solidificação)</div>
+          <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante a solidificação da poça de fusão (ainda em temperaturas altíssimas).<br><b>Onde fica:</b> Geralmente no centro do cordão de solda (sentido longitudinal).<br><b>Aparência:</b> Costuma ser aberta e "azulada" ou oxidada por dentro, pois o metal estava exposto ao ar enquanto ainda estava quente.<br><b>Causa:</b> Falta de metal líquido para preencher os espaços entre os grãos que estão se solidificando, geralmente por causa de impurezas (como enxofre) ou design de junta muito rígido.</div>
+        </div>
+        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
+          <div style="font-weight:600;font-size:14px;margin-bottom:8px">Trinca a Frio (Induzida por Hidrogênio)</div>
+          <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Horas ou até dias após a soldagem (conhecida como "trinca atrasada"), geralmente abaixo de 150°C.<br><b>Onde fica:</b> Quase sempre na Zona Afetada pelo Calor (ZAC), logo ao lado do cordão, ou na raiz.<br><b>Aparência:</b> São trincas finas, "limpas" (não oxidadas) e muitas vezes subsuperficiais (difíceis de ver a olho nu).<br><b>Causa:</b> Presença de hidrogênio, estrutura frágil (martensita) e tensões residuais.</div>
+        </div>
+        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
+          <div style="font-weight:600;font-size:14px;margin-bottom:8px">Trinca de Cratera</div>
+          <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante a solidificação final do metal de solda (é um tipo de trinca a quente que acontece de forma imediata).<br><b>Onde fica:</b> No ponto exato de interrupção do arco, especificamente na depressão (cratera) deixada no final do cordão.<br><b>Aparência:</b> Frequentemente apresenta um formato radial, assemelhando-se a uma estrela, "Y" ou "X", partindo do centro da cratera.<br><b>Causa:</b> Interrupção brusca do arco sem o devido preenchimento do volume final, resultando em contração excessiva do metal enquanto ele ainda está frágil (quente).</div>
+        </div>
+        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--green)">
+          <div style="font-weight:600;font-size:14px;margin-bottom:8px">Trinca de Liquação</div>
+          <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante o processo de soldagem, na zona que atinge temperaturas próximas à fusão (região subsolidus).<br><b>Onde fica:</b> Localizada na Zona Afetada pelo Calor (ZAC), bem próxima à linha de fusão, ou entre os passes em soldas de múltiplas camadas.<br><b>Aparência:</b> Geralmente são microtrincas que seguem o contorno dos grãos do metal base que "derreteram" levemente.<br><b>Causa:</b> Aquecimento excessivo que causa a fusão de constituintes de baixo ponto de fusão nos contornos de grão. Quando a solda resfria e contrai, esses pontos ainda líquidos não aguentam a tensão e se separam.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POROSIDADE -->
+    <div class="section-card">
+      <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--amber)">Porosidade</div>
+      <p style="font-size:13px;line-height:1.7;color:var(--text);margin-bottom:16px">A porosidade no ensaio de líquido penetrante (LP) é identificada pela presença de indicações arredondadas (pontos ou pequenas áreas locais de cor) após a aplicação do revelador. Estas indicações ocorrem quando o penetrante, que entrou em cavidades superficiais, é extraído pelo revelador, criando um contraste com o fundo.</p>
+      <div style="font-size:14px;font-weight:600;color:var(--amber);margin:16px 0 12px;text-transform:uppercase;letter-spacing:.4px">Tipos de Porosidade</div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--amber)">
+          <div style="font-weight:600;font-size:14px;margin-bottom:8px">Porosidade Isolada (ou Pontual)</div>
+          <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante a soldagem, no momento em que o metal ainda está líquido. O gás fica preso enquanto a poça de fusão se solidifica.<br><b>Onde fica:</b> Pode ocorrer em qualquer lugar ao longo do cordão de solda, podendo ser superficial (visível) ou interna.<br><b>Aparência:</b> Pequenos furos ou cavidades arredondadas (como bolhas), que aparecem sozinhas ou distantes umas das outras.<br><b>Causa:</b> Liberação de gases (como hidrogênio, nitrogênio ou oxigênio) que não conseguem escapar antes do metal endurecer.</div>
+        </div>
+        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--amber)">
+          <div style="font-weight:600;font-size:14px;margin-bottom:8px">Porosidade Agrupada (Cluster)</div>
+          <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante a solidificação da poça de fusão, quando uma grande quantidade de gás é liberada de uma só vez ou em um ponto específico.<br><b>Onde fica:</b> Em áreas localizadas do cordão de solda, concentrada em um ponto específico em vez de espalhada.<br><b>Aparência:</b> Um aglomerado de vários poros muito próximos uns dos outros, lembrando um "ninho" ou uma colmeia.<br><b>Causa:</b> Geralmente ligada a uma perda momentânea e severa da proteção gasosa, ou ao início do arco sobre uma área localizada de contaminação pesada.</div>
+        </div>
+        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--amber)">
+          <div style="font-weight:600;font-size:14px;margin-bottom:8px">Porosidade Linear</div>
+          <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante a solidificação do metal, quando os gases são aprisionados seguindo uma trajetória específica.<br><b>Onde fica:</b> Geralmente ao longo da linha de fusão (entre o cordão e o metal base) ou na raiz da solda.<br><b>Aparência:</b> Uma fileira ou linha reta de poros alinhados. Na radiografia, parecem um "colar de contas".<br><b>Causa:</b> Normalmente causada por contaminação retida em cantos (como ferrugem ou óleo no chanfro) ou falta de penetração que cria um vazio onde o gás fica preso e se alinha.</div>
+        </div>
+        <div style="background:var(--bg);border-radius:10px;padding:16px;border-left:3px solid var(--amber)">
+          <div style="font-weight:600;font-size:14px;margin-bottom:8px">Porosidade Superficial</div>
+          <div style="font-size:12px;line-height:1.7;color:var(--text-2)"><b>Quando ocorre:</b> Durante a solidificação da poça de fusão, quando o gás tenta escapar, mas o metal endurece antes que a bolha estoure completamente.<br><b>Onde fica:</b> Na face (topo) do cordão de solda, sendo visível a olho nu na superfície terminada.<br><b>Aparência:</b> Pequenos furos ou crateras abertas na superfície da solda, podendo dar um aspecto de "queijo suíço" ao acabamento.<br><b>Causa:</b> Geralmente ligada a problemas com o gás de proteção (vazão muito baixa ou muito alta causando turbulência), ventos no local de trabalho, ou metal base excessivamente sujo/úmido.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 <!-- MODAL -->
 <div id="modal-overlay" onclick="if(event.target===this)closeModal()">
   <div class="modal" id="modal">
@@ -1039,7 +1102,7 @@ function nav(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.sb-item').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
-  const map = {sobre:0,dashboard:1,nova:2,favoritos:3,buscar:4,trincas:99,porosidades:99,ondulacoes:99};
+  const map = {sobre:0,identificar:1,dashboard:2,nova:3,favoritos:4,buscar:5,trincas:99,porosidades:99,ondulacoes:99};
   if (map[page] < 10) document.querySelectorAll('.sb-item')[map[page]].classList.add('active');
   // Fecha sidebar em mobile ao navegar
   document.getElementById('sidebar').classList.remove('open');
